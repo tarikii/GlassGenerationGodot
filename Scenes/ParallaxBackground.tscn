@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Sprites/Menu/fondomenu.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/ParallaxBackground.gd" type="Script" id=2]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( -54, 2 )
+scale = Vector2( 1.09643, 1 )
+texture = ExtResource( 1 )
+centered = false
+region_rect = Rect2( 26.2559, -22.0666, 2973.74, 3022.07 )

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Fonts/Sharp Retro.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Fonts/FuenteMenuBotones.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/ParallaxBackground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="VBoxBotones" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -93.0
+margin_top = -148.0
+margin_right = 179.0
+margin_bottom = -10.0
+custom_constants/separation = 15
+
+[node name="Empezar Partida" type="Button" parent="VBoxBotones"]
+margin_right = 272.0
+margin_bottom = 36.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.392157, 0.917647, 0.0627451, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Empezar Partida"
+flat = true
+
+[node name="Puntuaciones" type="Button" parent="VBoxBotones"]
+margin_top = 51.0
+margin_right = 272.0
+margin_bottom = 87.0
+custom_colors/font_color = Color( 0.392157, 0.917647, 0.0627451, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Puntuaciones"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxBotones"]
+margin_top = 102.0
+margin_right = 272.0
+margin_bottom = 138.0
+custom_colors/font_color = Color( 0.392157, 0.917647, 0.0627451, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Salir"
+flat = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="VBoxBotones/Empezar Partida" to="." method="cambiarEscenaEmpezarPartida"]
+[connection signal="pressed" from="VBoxBotones/Puntuaciones" to="." method="cambiarEscenaPuntuaciones"]
+[connection signal="pressed" from="VBoxBotones/Salir" to="." method="onSalirButtonPressed"]

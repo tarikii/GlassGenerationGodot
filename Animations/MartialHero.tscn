@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="MartialHero Node" type="Node2D"]
+
+[node name="Character" type="KinematicBody2D" parent="."]
+
+[node name="MartialHero" type="Sprite" parent="Character"]
