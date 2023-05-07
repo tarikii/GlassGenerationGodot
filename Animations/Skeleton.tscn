@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Resources/Sprites/Knight/KnightIdle.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Knight.gd" type="Script" id=2]
-[ext_resource path="res://Resources/Sprites/Knight/KnightRun.png" type="Texture" id=3]
-[ext_resource path="res://Resources/Sprites/Knight/KnightAttack.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Sprites/Skeleton/Idle.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Skeleton.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Sprites/Skeleton/Walk.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Sprites/Skeleton/Attack.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Sprites/Skeleton/Death.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +23,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -34,7 +35,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -43,10 +44,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 22 ]
+"values": [ 8 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -55,7 +56,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -63,7 +64,7 @@ resource_name = "Attack Right"
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -75,7 +76,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -87,7 +88,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -96,10 +97,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 22 ]
+"values": [ 8 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -108,15 +109,15 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idle Left"
-length = 1.4
+[sub_resource type="Animation" id=9]
+resource_name = "Death Left"
+length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -125,10 +126,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -140,7 +141,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -149,27 +150,27 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 15 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14 ]
+"values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Idle Right"
-length = 1.4
+[sub_resource type="Animation" id=8]
+resource_name = "Death Right"
+length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -178,10 +179,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -193,7 +194,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -202,25 +203,131 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 15 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14 ]
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle Left"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle Right"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
 }
 
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -232,7 +339,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -244,7 +351,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -253,10 +360,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 15 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -269,11 +376,11 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "Run Left"
-length = 0.7
+resource_name = "Walk Left"
+length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -285,7 +392,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -297,7 +404,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -306,27 +413,27 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 8 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+"values": [ 0, 1, 2 ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "Run Right"
-length = 0.7
+resource_name = "Walk Right"
+length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Knight:texture")
+tracks/0/path = NodePath("Skeleton:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -338,7 +445,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Knight:flip_h")
+tracks/1/path = NodePath("Skeleton:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -350,7 +457,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Knight:hframes")
+tracks/2/path = NodePath("Skeleton:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -359,45 +466,48 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 8 ]
+"values": [ 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Knight:frame")
+tracks/3/path = NodePath("Skeleton:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7 ]
+"values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=8]
-radius = 33.0
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 44.0
+height = 56.0
 
-[node name="Knight Node" type="Node2D"]
+[node name="Skeleton Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="."]
-position = Vector2( 240, 195 )
+position = Vector2( 431, 251 )
 script = ExtResource( 2 )
 
-[node name="Knight" type="Sprite" parent="Character"]
-position = Vector2( -21.5, -24.5 )
-scale = Vector2( 2.32813, 1.76563 )
+[node name="Skeleton" type="Sprite" parent="Character"]
+position = Vector2( 53, 57 )
+scale = Vector2( 1.70667, 1.76 )
 texture = ExtResource( 1 )
-hframes = 15
+hframes = 4
 
-[node name="KnightPlayer" type="AnimationPlayer" parent="Character"]
+[node name="SkeletonPlayer" type="AnimationPlayer" parent="Character"]
 "anims/Attack Left" = SubResource( 7 )
 "anims/Attack Right" = SubResource( 6 )
+"anims/Death Left" = SubResource( 9 )
+"anims/Death Right" = SubResource( 8 )
 "anims/Idle Left" = SubResource( 3 )
 "anims/Idle Right" = SubResource( 1 )
 anims/RESET = SubResource( 2 )
-"anims/Run Left" = SubResource( 5 )
-"anims/Run Right" = SubResource( 4 )
+"anims/Walk Left" = SubResource( 5 )
+"anims/Walk Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( -17, -27 )
-shape = SubResource( 8 )
+position = Vector2( 65, 60 )
+shape = SubResource( 10 )
