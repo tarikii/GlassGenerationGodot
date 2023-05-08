@@ -375,7 +375,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 33.0
+radius = 23.0
 
 [node name="Knight Node" type="Node2D"]
 
@@ -399,5 +399,5 @@ anims/RESET = SubResource( 2 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( -17, -27 )
+position = Vector2( -21, -27 )
 shape = SubResource( 8 )

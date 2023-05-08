@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump.png-72835b0e5d23b29b48f39749119635ed.stex"
+path="res://.import/Death.png-2aa7ce38f2fc57ab6619d6c7ed31f09e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Martial Hero/Jump.png"
-dest_files=[ "res://.import/Jump.png-72835b0e5d23b29b48f39749119635ed.stex" ]
+source_file="res://Resources/Sprites/Huntress/Death.png"
+dest_files=[ "res://.import/Death.png-2aa7ce38f2fc57ab6619d6c7ed31f09e.stex" ]
 
 [params]
 

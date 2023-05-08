@@ -480,7 +480,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 32.0
+radius = 22.0
 
 [node name="MartialHero Node" type="Node2D"]
 

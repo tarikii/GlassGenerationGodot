@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Attack2.png-f854fcba6216f1918d4b421cc0b886e0.stex"
+path="res://.import/Attack.png-41d0fa762871cd6e063ec0b015079649.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Martial Hero/Attack2.png"
-dest_files=[ "res://.import/Attack2.png-f854fcba6216f1918d4b421cc0b886e0.stex" ]
+source_file="res://Resources/Sprites/Warrior/Attack.png"
+dest_files=[ "res://.import/Attack.png-41d0fa762871cd6e063ec0b015079649.stex" ]
 
 [params]
 

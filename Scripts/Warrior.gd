@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const SPEED = 100
 var motion = Vector2()
-onready var animation = $MartialHeroPlayer
+onready var animation = $WarriorPlayer
 
 func _physics_process(delta):
 	motion = move_and_slide(motion)

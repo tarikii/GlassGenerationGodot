@@ -482,7 +482,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 25.0
+radius = 20.0
 height = 26.0
 
 [node name="Mushroom Node" type="Node2D"]
@@ -509,5 +509,5 @@ anims/RESET = SubResource( 2 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 46, 54 )
+position = Vector2( 44, 52 )
 shape = SubResource( 10 )
