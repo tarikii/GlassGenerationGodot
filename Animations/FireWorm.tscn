@@ -485,7 +485,7 @@ extents = Vector2( 27, 24.5 )
 [node name="FireWorm Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="."]
-position = Vector2( 489, 223 )
+position = Vector2( 487, 218 )
 script = ExtResource( 2 )
 
 [node name="FireWorm" type="Sprite" parent="Character"]
@@ -507,5 +507,5 @@ anims/RESET = SubResource( 2 )
 "anims/Walk Right" = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 27, 2 )
+position = Vector2( 160, -123 )
 shape = SubResource( 8 )
