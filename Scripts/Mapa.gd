@@ -7,8 +7,8 @@ func _process(delta):
 	var spriteSize = $Map.texture.get_size()
 	var viewportSize = get_viewport_rect().size
 	
-	var estructuraJugadorSize = $EstructuraJugador.get_viewport_rect().size
-	var estructuraEnemigaSize = $EstructuraEnemiga.get_viewport_rect().size
+	var estructuraJugadorSize = $Map/EstructuraJugador.get_viewport_rect().size
+	var estructuraEnemigaSize = $Map/EstructuraEnemiga.get_viewport_rect().size
 	
 	var half_viewport_width = viewportSize.x / 2
 	var half_sprite_width = spriteSize.x / 2
@@ -19,9 +19,9 @@ func _process(delta):
 	# Mover el sprite hacia la derecha o la izquierda
 	if Input.is_action_pressed("ui_right") and $Map.position.x > -max_x -250:
 		$Map.position.x -= SPEED * delta
-		$EstructuraJugador.position.x -= SPEED * delta
-		$EstructuraEnemiga.position.x -= SPEED * delta
+		$Map/EstructuraJugador.position.x -= (SPEED-500) * delta
+		$Map/EstructuraEnemiga.position.x -= (SPEED-500) * delta
 	elif Input.is_action_pressed("ui_left") and $Map.position.x < max_x + spriteSize.x:
 		$Map.position.x += SPEED * delta
-		$EstructuraEnemiga.position.x += SPEED * delta
-		$EstructuraJugador.position.x += SPEED * delta
+		$Map/EstructuraEnemiga.position.x += (SPEED-500) * delta
+		$Map/EstructuraJugador.position.x += (SPEED-500) * delta
