@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Resources/Sprites/Huntress/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Huntress/Run.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Sprites/Huntress/Attack.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Sprites/Huntress/Death.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Huntress.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
@@ -478,14 +479,19 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 21.0
+height = 24.0
+
 [node name="Huntress Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="."]
 position = Vector2( 521, 247 )
+script = ExtResource( 5 )
 
 [node name="Huntress" type="Sprite" parent="Character"]
-position = Vector2( 20, 22 )
-scale = Vector2( 1.4, 1.44 )
+position = Vector2( 52.25, -49.75 )
+scale = Vector2( 1.735, 1.825 )
 texture = ExtResource( 1 )
 hframes = 10
 
@@ -499,3 +505,7 @@ hframes = 10
 anims/RESET = SubResource( 2 )
 "anims/Run Left" = SubResource( 4 )
 "anims/Run Right" = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2( 61, -49 )
+shape = SubResource( 10 )

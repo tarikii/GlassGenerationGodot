@@ -480,17 +480,18 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 15.0
+radius = 17.0
+height = 48.0
 
 [node name="Witch Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="."]
-position = Vector2( 565, 249 )
+position = Vector2( 473, 165 )
 script = ExtResource( 2 )
 
 [node name="Witch" type="Sprite" parent="Character"]
-position = Vector2( 9.25, 6.5 )
-scale = Vector2( 1.21765, 1.23214 )
+position = Vector2( 28.2499, -4.50004 )
+scale = Vector2( 1.66471, 1.625 )
 texture = ExtResource( 1 )
 hframes = 13
 
@@ -506,5 +507,5 @@ anims/RESET = SubResource( 2 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( -2, 16 )
+position = Vector2( 15, 6 )
 shape = SubResource( 10 )

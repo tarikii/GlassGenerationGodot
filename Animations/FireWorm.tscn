@@ -480,7 +480,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 27, 24.5 )
+extents = Vector2( 42, 50.375 )
 
 [node name="FireWorm Node" type="Node2D"]
 
@@ -489,8 +489,8 @@ position = Vector2( 487, 218 )
 script = ExtResource( 2 )
 
 [node name="FireWorm" type="Sprite" parent="Character"]
-position = Vector2( 16.5, 10 )
-scale = Vector2( 1.36667, 1.22222 )
+position = Vector2( 35.4999, -30.5 )
+scale = Vector2( 1.78889, 2.12222 )
 texture = ExtResource( 1 )
 hframes = 9
 
@@ -507,5 +507,5 @@ anims/RESET = SubResource( 2 )
 "anims/Walk Right" = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 160, -123 )
+position = Vector2( 53, -47.625 )
 shape = SubResource( 8 )

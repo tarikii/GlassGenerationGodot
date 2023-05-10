@@ -375,7 +375,8 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 23.0
+radius = 35.0
+height = 6.0
 
 [node name="Knight Node" type="Node2D"]
 
@@ -384,8 +385,8 @@ position = Vector2( 240, 195 )
 script = ExtResource( 2 )
 
 [node name="Knight" type="Sprite" parent="Character"]
-position = Vector2( -21.5, -24.5 )
-scale = Vector2( 2.32813, 1.76563 )
+position = Vector2( 321, -24 )
+scale = Vector2( 2.79688, 2.25 )
 texture = ExtResource( 1 )
 hframes = 15
 
@@ -399,5 +400,5 @@ anims/RESET = SubResource( 2 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( -21, -27 )
+position = Vector2( 328, -31 )
 shape = SubResource( 8 )

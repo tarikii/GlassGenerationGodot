@@ -4,7 +4,7 @@ export var speed = 1800
 var anim_player
 
 func _ready():
-	anim_player = $MartialHeroPlayer
+	anim_player = $HuntressPlayer
 
 func _process(delta):
 	var velocity = Vector2()

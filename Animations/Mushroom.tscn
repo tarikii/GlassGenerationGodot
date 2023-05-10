@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scripts/Demon.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Sprites/Mushroom/Idle.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Sprites/Mushroom/Run.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Sprites/Mushroom/Attack.png" type="Texture" id=4]
@@ -492,7 +492,7 @@ position = Vector2( 297, 218 )
 script = ExtResource( 1 )
 
 [node name="Mushroom" type="Sprite" parent="Character"]
-position = Vector2( 43, 39.5 )
+position = Vector2( 230, -16 )
 scale = Vector2( 1.57333, 1.52667 )
 texture = ExtResource( 2 )
 hframes = 4
@@ -509,5 +509,5 @@ anims/RESET = SubResource( 2 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 44, 52 )
+position = Vector2( 230, -6 )
 shape = SubResource( 10 )

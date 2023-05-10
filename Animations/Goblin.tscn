@@ -481,6 +481,7 @@ tracks/3/keys = {
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 19.0
+height = 38.0
 
 [node name="Goblin Node" type="Node2D"]
 
@@ -489,8 +490,8 @@ position = Vector2( 591, 248 )
 script = ExtResource( 5 )
 
 [node name="Goblin" type="Sprite" parent="Character"]
-position = Vector2( -197, 114 )
-scale = Vector2( 1.49333, 1.48667 )
+position = Vector2( 78.7501, -59.9999 )
+scale = Vector2( 2.07, 1.88 )
 texture = ExtResource( 1 )
 hframes = 4
 
@@ -506,5 +507,5 @@ anims/RESET = SubResource( 2 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( -192, 127 )
+position = Vector2( 90, -44 )
 shape = SubResource( 10 )

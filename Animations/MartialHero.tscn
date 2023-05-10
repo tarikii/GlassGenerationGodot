@@ -480,7 +480,8 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 22.0
+radius = 21.0
+height = 28.0
 
 [node name="MartialHero Node" type="Node2D"]
 
@@ -488,8 +489,8 @@ radius = 22.0
 script = ExtResource( 3 )
 
 [node name="MartialHero" type="Sprite" parent="Character"]
-position = Vector2( 476, 212 )
-scale = Vector2( 1.25, 1.26 )
+position = Vector2( 503, 197 )
+scale = Vector2( 1.52, 1.41 )
 texture = ExtResource( 1 )
 flip_h = true
 hframes = 4
@@ -507,5 +508,5 @@ anims/RESET = SubResource( 3 )
 "anims/Run Right" = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 474, 214 )
+position = Vector2( 501, 199 )
 shape = SubResource( 10 )
