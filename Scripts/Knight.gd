@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var speed = 1800
+onready var health = $HPBarKnight
 var anim_player
 
 func _ready():

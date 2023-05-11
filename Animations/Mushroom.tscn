@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Sprites/Mushroom/Idle.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Sprites/Mushroom/Run.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Sprites/Mushroom/Attack.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Sprites/Mushroom/Death.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
@@ -57,6 +58,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -111,6 +124,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "Death Left"
@@ -163,6 +188,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -217,6 +254,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle Left"
@@ -269,6 +318,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -323,6 +384,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -373,6 +446,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -427,6 +512,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Run Right"
@@ -480,6 +577,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("MushroomPlayer:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.30381 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
 
 [sub_resource type="CapsuleShape2D" id=10]
 radius = 20.0
@@ -498,6 +607,7 @@ texture = ExtResource( 2 )
 hframes = 4
 
 [node name="MushroomPlayer" type="AnimationPlayer" parent="Character"]
+playback_speed = 0.5
 "anims/Attack Left" = SubResource( 7 )
 "anims/Attack Right" = SubResource( 6 )
 "anims/Death Left" = SubResource( 8 )
@@ -511,3 +621,17 @@ anims/RESET = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2( 230, -6 )
 shape = SubResource( 10 )
+
+[node name="HPBarMushroom" type="TextureProgress" parent="Character"]
+margin_left = 191.0
+margin_top = -54.0
+margin_right = 271.0
+margin_bottom = -44.0
+rect_min_size = Vector2( 80, 10 )
+max_value = 300.0
+value = 300.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+tint_under = Color( 1, 1, 1, 0 )
+tint_progress = Color( 0.188235, 1, 0, 1 )
+nine_patch_stretch = true
