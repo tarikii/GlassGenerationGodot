@@ -31,6 +31,8 @@ func pulsarBotonFireWorm():
 	var fireWormScene = load("res://Animations/FireWorm.tscn")
 	var fireWormInstance = fireWormScene.instance()
 	fireWormInstance.set_global_position(Vector2(-987, -20))
+	var animPlayer = fireWormInstance.get_node("FireWormPlayer")
+	animPlayer.play("Walk Right")
 	fireWormInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(fireWormInstance)
 
@@ -111,4 +113,4 @@ func pulsarBotonWizard():
 func _on_EstructuraEnemiga_body_entered(body):
 	if body is KinematicBody2D and body.is_in_group("PlayerCharacters"):
 		var fireworm_player = body.get_node("FireWormPlayer")
-		fireworm_player.play("Attack Left")
+		fireworm_player.stop()

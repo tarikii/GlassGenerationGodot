@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Resources/Sprites/FireWorm/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/FireWorm.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://Resources/Sprites/FireWorm/Attack.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Sprites/FireWorm/Death.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 28.5, 42 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 33, 50.375 )
 
 [sub_resource type="Animation" id=6]
 resource_name = "Attack Left"
@@ -374,7 +380,7 @@ tracks/3/keys = {
 "values": [ 0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../HPBarFireWorm:nine_patch_stretch")
+tracks/4/path = NodePath("../Character/HPBarFireWorm:nine_patch_stretch")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -386,7 +392,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../HPBarFireWorm:rect_size")
+tracks/5/path = NodePath("../Character/HPBarFireWorm:rect_size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -398,7 +404,7 @@ tracks/5/keys = {
 "values": [ Vector2( 80, 10 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../HPBarFireWorm:rect_position")
+tracks/6/path = NodePath("../Character/HPBarFireWorm:rect_position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -410,7 +416,7 @@ tracks/6/keys = {
 "values": [ Vector2( 15, -104 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("../HPBarFireWorm:tint_under")
+tracks/7/path = NodePath("../Character/HPBarFireWorm:tint_under")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -422,7 +428,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("../HPBarFireWorm:tint_progress")
+tracks/8/path = NodePath("../Character/HPBarFireWorm:tint_progress")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -434,7 +440,7 @@ tracks/8/keys = {
 "values": [ Color( 0.188235, 1, 0, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../HPBarFireWorm:texture_under")
+tracks/9/path = NodePath("../Character/HPBarFireWorm:texture_under")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -446,7 +452,7 @@ tracks/9/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../HPBarFireWorm:texture_progress")
+tracks/10/path = NodePath("../Character/HPBarFireWorm:texture_progress")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -458,7 +464,7 @@ tracks/10/keys = {
 "values": [ ExtResource( 6 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../HPBarFireWorm:max_value")
+tracks/11/path = NodePath("../Character/HPBarFireWorm:max_value")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -470,7 +476,7 @@ tracks/11/keys = {
 "values": [ 500.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("../HPBarFireWorm:value")
+tracks/12/path = NodePath("../Character/HPBarFireWorm:value")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -588,9 +594,6 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 42, 50.375 )
-
 [node name="FireWorm Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="." groups=["PlayerCharacters"]]
@@ -598,23 +601,11 @@ position = Vector2( 487, 218 )
 collision_mask = 4095
 script = ExtResource( 2 )
 
-[node name="FireWorm" type="Sprite" parent="Character"]
-position = Vector2( 35.4999, -30.5 )
-scale = Vector2( 1.78889, 2.12222 )
-texture = ExtResource( 1 )
-hframes = 9
+[node name="Area2D" type="Area2D" parent="Character"]
 
-[node name="FireWormPlayer" type="AnimationPlayer" parent="Character"]
-root_node = NodePath("../FireWorm")
-"anims/Attack Left" = SubResource( 6 )
-"anims/Attack Right" = SubResource( 7 )
-"anims/Death Left" = SubResource( 10 )
-"anims/Death Right" = SubResource( 9 )
-"anims/Idle Left" = SubResource( 3 )
-"anims/Idle Right" = SubResource( 1 )
-anims/RESET = SubResource( 2 )
-"anims/Walk Left" = SubResource( 4 )
-"anims/Walk Right" = SubResource( 5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+position = Vector2( 59.5, -39 )
+shape = SubResource( 11 )
 
 [node name="HPBarFireWorm" type="TextureProgress" parent="Character"]
 margin_left = 15.0
@@ -631,7 +622,27 @@ tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-position = Vector2( 53, -47.625 )
+visible = false
+position = Vector2( 44, -47.625 )
 shape = SubResource( 8 )
 
-[connection signal="animation_changed" from="Character/FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_changed"]
+[node name="FireWorm" type="Sprite" parent="Character"]
+position = Vector2( 35.4999, -30.5 )
+scale = Vector2( 1.78889, 2.12222 )
+texture = ExtResource( 1 )
+hframes = 9
+
+[node name="FireWormPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Character/FireWorm")
+"anims/Attack Left" = SubResource( 6 )
+"anims/Attack Right" = SubResource( 7 )
+"anims/Death Left" = SubResource( 10 )
+"anims/Death Right" = SubResource( 9 )
+"anims/Idle Left" = SubResource( 3 )
+"anims/Idle Right" = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+"anims/Walk Left" = SubResource( 4 )
+"anims/Walk Right" = SubResource( 5 )
+
+[connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
+[connection signal="animation_changed" from="FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_changed"]

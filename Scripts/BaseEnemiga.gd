@@ -1,3 +1,3 @@
-extends Area2D
+extends KinematicBody2D
 
 onready var health = 2000
