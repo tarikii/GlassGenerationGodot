@@ -3,6 +3,17 @@ extends Node2D
 const SPEED = 500
 
 onready var base_enemiga = $Map/EstructuraEnemiga
+onready var fireWormScene = load("res://Animations/FireWorm.tscn")
+onready var goblinScene = load("res://Animations/Goblin.tscn")
+onready var huntressScene = load("res://Animations/Huntress.tscn")
+onready var knightScene = load("res://Animations/Knight.tscn")
+onready var martialHeroScene = load("res://Animations/MartialHero.tscn")
+onready var mushroomScene = load("res://Animations/Mushroom.tscn")
+onready var undeadScene = load("res://Animations/Undead.tscn")
+onready var warriorScene = load("res://Animations/Warrior.tscn")
+onready var witchScene = load("res://Animations/Witch.tscn")
+onready var wizardScene = load("res://Animations/Wizard.tscn")
+
 
 func _process(delta):
 	# Obtener el tamaño del sprite y del viewport
@@ -28,7 +39,6 @@ func _process(delta):
 
 
 func pulsarBotonFireWorm():
-	var fireWormScene = load("res://Animations/FireWorm.tscn")
 	var fireWormInstance = fireWormScene.instance()
 	fireWormInstance.set_global_position(Vector2(-987, -20))
 	var animPlayer = fireWormInstance.get_node("FireWormPlayer")
@@ -38,79 +48,82 @@ func pulsarBotonFireWorm():
 
 
 func pulsarBotonGoblin():
-	var goblinScene = load("res://Animations/Goblin.tscn")
 	var goblinInstance = goblinScene.instance()
 	goblinInstance.set_global_position(Vector2(-1145, -35))
+	var animPlayer = goblinInstance.get_node("GoblinPlayer")
+	animPlayer.play("Run Right")
 	goblinInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(goblinInstance)
 
 
 func pulsarBotonHuntress():
-	var huntressScene = load("res://Animations/Huntress.tscn")
 	var huntressInstance = huntressScene.instance()
 	huntressInstance.set_global_position(Vector2(-1045, -35))
+	var animPlayer = huntressInstance.get_node("HuntressPlayer")
+	animPlayer.play("Run Right")
 	huntressInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(huntressInstance)
 
 
 func pulsarBotonKnight():
-	var knightScene = load("res://Animations/Knight.tscn")
 	var knightInstance = knightScene.instance()
 	knightInstance.set_global_position(Vector2(-1045, 0))
+	var animPlayer = knightInstance.get_node("KnightPlayer")
+	animPlayer.play("Run Right")
 	knightInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(knightInstance)
 
 
 func pulsarBotonMartialHero():
-	var martialHeroScene = load("res://Animations/MartialHero.tscn")
 	var martialHeroInstance = martialHeroScene.instance()
 	martialHeroInstance.set_global_position(Vector2(-985, -30))
+	var animPlayer = martialHeroInstance.get_node("MartialHeroPlayer")
+	animPlayer.play("Run Right")
 	martialHeroInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(martialHeroInstance)
 
 
 func pulsarBotonMushroom():
-	var mushroomScene = load("res://Animations/Mushroom.tscn")
 	var mushroomInstance = mushroomScene.instance()
 	mushroomInstance.set_global_position(Vector2(-1015, -40))
+	var animPlayer = mushroomInstance.get_node("MushroomPlayer")
+	animPlayer.play("Run Right")
 	mushroomInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(mushroomInstance)
 
 
 func pulsarBotonUndead():
-	var undeadScene = load("res://Animations/Undead.tscn")
 	var undeadInstance = undeadScene.instance()
 	undeadInstance.set_global_position(Vector2(-1010, -70))
+	var animPlayer = undeadInstance.get_node("UndeadPlayer")
+	animPlayer.play("Walk Right")
 	undeadInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(undeadInstance)
 
 
 func pulsarBotonWarrior():
-	var warriorScene = load("res://Animations/Warrior.tscn")
 	var warriorInstance = warriorScene.instance()
 	warriorInstance.set_global_position(Vector2(-880, -30))
+	var animPlayer = warriorInstance.get_node("WarriorPlayer")
+	animPlayer.play("Run Right")
 	warriorInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(warriorInstance)
 
 
 func pulsarBotonWitch():
-	var witchScene = load("res://Animations/Witch.tscn")
 	var witchInstance = witchScene.instance()
 	witchInstance.set_global_position(Vector2(-970, 0))
+	var animPlayer = witchInstance.get_node("WitchPlayer")
+	animPlayer.play("Run Right")
 	witchInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(witchInstance)
 
 
 func pulsarBotonWizard():
-	var wizardScene = load("res://Animations/Wizard.tscn")
 	var wizardInstance = wizardScene.instance()
 	wizardInstance.set_global_position(Vector2(-1040, 0))
+	var animPlayer = wizardInstance.get_node("WizardPlayer")
+	animPlayer.play("Run Right")
 	wizardInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(wizardInstance)
 	
-
-
-func _on_EstructuraEnemiga_body_entered(body):
-	if body is KinematicBody2D and body.is_in_group("PlayerCharacters"):
-		var fireworm_player = body.get_node("FireWormPlayer")
-		fireworm_player.stop()

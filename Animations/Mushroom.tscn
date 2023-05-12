@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Mushroom.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Sprites/Mushroom/Idle.png" type="Texture" id=2]
@@ -6,6 +6,13 @@
 [ext_resource path="res://Resources/Sprites/Mushroom/Attack.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Sprites/Mushroom/Death.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 20.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 19, 29.5 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
@@ -590,10 +597,6 @@ tracks/4/keys = {
 "values": [ 0.5 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=10]
-radius = 20.0
-height = 26.0
-
 [node name="Mushroom Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="."]
@@ -608,19 +611,8 @@ scale = Vector2( 1.57333, 1.52667 )
 texture = ExtResource( 2 )
 hframes = 4
 
-[node name="MushroomPlayer" type="AnimationPlayer" parent="Character"]
-playback_speed = 0.5
-"anims/Attack Left" = SubResource( 7 )
-"anims/Attack Right" = SubResource( 6 )
-"anims/Death Left" = SubResource( 8 )
-"anims/Death Right" = SubResource( 9 )
-"anims/Idle Left" = SubResource( 3 )
-"anims/Idle Right" = SubResource( 1 )
-anims/RESET = SubResource( 2 )
-"anims/Run Light" = SubResource( 5 )
-"anims/Run Right" = SubResource( 4 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+visible = false
 position = Vector2( 230, -6 )
 shape = SubResource( 10 )
 
@@ -637,3 +629,24 @@ texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 1, 1, 0 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
+
+[node name="Area2D" type="Area2D" parent="Character"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+position = Vector2( 230, -3.5 )
+shape = SubResource( 11 )
+
+[node name="MushroomPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Character")
+playback_speed = 0.5
+"anims/Attack Left" = SubResource( 7 )
+"anims/Attack Right" = SubResource( 6 )
+"anims/Death Left" = SubResource( 8 )
+"anims/Death Right" = SubResource( 9 )
+"anims/Idle Left" = SubResource( 3 )
+"anims/Idle Right" = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+"anims/Run Light" = SubResource( 5 )
+"anims/Run Right" = SubResource( 4 )
+
+[connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 250
+export var speed = 100
 onready var health = $HPBarFireWorm
 var anim_player
 
@@ -14,5 +14,6 @@ func _process(delta):
 	# aplicar la velocidad al FireWorm
 	move_and_collide(velocity)
 
-func _on_Area2D_area_entered(hitbox):
-	anim_player.play("Attack Right")
+func _on_Area2D_area_entered(enemyHitBox):
+	var fireWormPlayer = get_node("../FireWormPlayer")
+	fireWormPlayer.play("Attack Right")

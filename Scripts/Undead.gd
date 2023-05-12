@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 1800
+export var speed = 100
 onready var health = $HPBarUndead
 var anim_player
 
@@ -12,5 +12,10 @@ func _process(delta):
 	# calcular la velocidad basada en la variable de velocidad
 	velocity.x += speed * delta
 	# aplicar la velocidad al FireWorm
-	move_and_slide(velocity)
-	anim_player.play("Walk Right")
+	move_and_collide(velocity)
+
+
+func _on_Area2D_area_entered(enemyHitBox):
+	var undeadPlayer = get_node("../UndeadPlayer")
+	undeadPlayer.play("Attack Right")
+	speed = 0
