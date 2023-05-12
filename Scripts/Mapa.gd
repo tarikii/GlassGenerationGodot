@@ -2,6 +2,8 @@ extends Node2D
 
 const SPEED = 500
 
+onready var base_enemiga = $Map/EstructuraEnemiga
+
 func _process(delta):
 	# Obtener el tamaño del sprite y del viewport
 	var spriteSize = $Map.texture.get_size()
@@ -103,3 +105,10 @@ func pulsarBotonWizard():
 	wizardInstance.set_global_position(Vector2(-1040, 0))
 	wizardInstance.add_to_group("PlayerCharacters")
 	$Map.add_child(wizardInstance)
+	
+
+
+func _on_EstructuraEnemiga_body_entered(body):
+	if body is KinematicBody2D and body.is_in_group("PlayerCharacters"):
+		var fireworm_player = body.get_node("FireWormPlayer")
+		fireworm_player.play("Attack Left")

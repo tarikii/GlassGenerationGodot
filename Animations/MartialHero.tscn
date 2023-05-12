@@ -595,6 +595,8 @@ height = 28.0
 [node name="MartialHero Node" type="Node2D"]
 
 [node name="Character" type="KinematicBody2D" parent="."]
+collision_layer = 16
+collision_mask = 4095
 script = ExtResource( 3 )
 
 [node name="MartialHero" type="Sprite" parent="Character"]

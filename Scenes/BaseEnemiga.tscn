@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Sprites/Base/BaseEnemiga.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/BaseEnemiga.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 118.5, 114.5 )
 
 [node name="EstructuraEnemiga" type="Area2D"]
+collision_layer = 1024
+collision_mask = 2047
+script = ExtResource( 3 )
 
 [node name="BaseEnemiga" type="Sprite" parent="."]
 position = Vector2( 459, 255 )

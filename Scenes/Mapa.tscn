@@ -172,3 +172,4 @@ text = "Oro en el banco: 500
 [connection signal="pressed" from="Map/BotonesPersonajes/HBoxBotonesInferior/WarriorBoton" to="." method="pulsarBotonWarrior"]
 [connection signal="pressed" from="Map/BotonesPersonajes/HBoxBotonesInferior/WitchBoton" to="." method="pulsarBotonWitch"]
 [connection signal="pressed" from="Map/BotonesPersonajes/HBoxBotonesInferior/WizardBoton" to="." method="pulsarBotonWizard"]
+[connection signal="body_entered" from="Map/EstructuraEnemiga" to="." method="_on_EstructuraEnemiga_body_entered"]

@@ -593,8 +593,9 @@ extents = Vector2( 42, 50.375 )
 
 [node name="FireWorm Node" type="Node2D"]
 
-[node name="Character" type="KinematicBody2D" parent="."]
+[node name="Character" type="KinematicBody2D" parent="." groups=["PlayerCharacters"]]
 position = Vector2( 487, 218 )
+collision_mask = 4095
 script = ExtResource( 2 )
 
 [node name="FireWorm" type="Sprite" parent="Character"]
@@ -632,3 +633,5 @@ nine_patch_stretch = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 position = Vector2( 53, -47.625 )
 shape = SubResource( 8 )
+
+[connection signal="animation_changed" from="Character/FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_changed"]

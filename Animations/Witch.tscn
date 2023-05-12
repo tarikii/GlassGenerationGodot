@@ -596,6 +596,8 @@ height = 48.0
 
 [node name="Character" type="KinematicBody2D" parent="."]
 position = Vector2( 473, 165 )
+collision_layer = 256
+collision_mask = 4095
 script = ExtResource( 2 )
 
 [node name="Witch" type="Sprite" parent="Character"]

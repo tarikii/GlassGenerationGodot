@@ -71,6 +71,21 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 
 common/drop_mouse_on_gui_input_disabled=true
 
+[layer_names]
+
+2d_physics/layer_1="FireWorm"
+2d_physics/layer_2="Goblin"
+2d_physics/layer_3="Huntress"
+2d_physics/layer_4="Knight"
+2d_physics/layer_5="MartialHero"
+2d_physics/layer_6="Mushroom"
+2d_physics/layer_7="Undead"
+2d_physics/layer_8="Warrior"
+2d_physics/layer_9="Witch"
+2d_physics/layer_10="Wizard"
+2d_physics/layer_11="EstructuraEnemiga"
+2d_physics/layer_12="EstructuraJugador"
+
 [physics]
 
 common/enable_pause_aware_picking=true

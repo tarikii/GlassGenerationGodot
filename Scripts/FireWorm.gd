@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 1800
+export var speed = 30000
 onready var health = $HPBarFireWorm
 var anim_player
 
@@ -14,4 +14,3 @@ func _process(delta):
 	# aplicar la velocidad al FireWorm
 	move_and_slide(velocity)
 	# aplicar la animacion Walk Right por defecto
-	anim_player.play("Walk Right")
