@@ -1,11 +1,10 @@
 extends KinematicBody2D
 
-export var speed = 100
+export var speed = 300
 onready var health = $HPBarHuntress
-var anim_player
+onready var damage = 150
+onready var huntressPlayer = get_node("../HuntressPlayer")
 
-func _ready():
-	anim_player = $HuntressPlayer
 
 func _process(delta):
 	var velocity = Vector2()
@@ -14,7 +13,12 @@ func _process(delta):
 	# aplicar la velocidad al FireWorm
 	move_and_collide(velocity)
 
+
 func _on_Area2D_area_entered(enemyHitBox):
-	var huntressPlayer = get_node("../HuntressPlayer")
 	huntressPlayer.play("Attack Right")
-	speed = 0
+	attackEnemy(enemyHitBox)
+
+
+func attackEnemy(enemy):
+	if enemy.has_method("reduce_health"):
+		enemy.reduce_health(damage)

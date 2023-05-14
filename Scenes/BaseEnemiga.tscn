@@ -8,12 +8,11 @@
 extents = Vector2( 118.5, 114.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 86.5, 88.25 )
+extents = Vector2( 88.25, 88.25 )
 
 [node name="EstructuraEnemiga" type="KinematicBody2D" groups=["bases"]]
 collision_layer = 1024
 collision_mask = 2047
-script = ExtResource( 3 )
 
 [node name="BaseEnemiga" type="Sprite" parent="."]
 position = Vector2( 459, 255 )
@@ -40,7 +39,10 @@ position = Vector2( 455.5, 245.5 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 405, 276.75 )
+position = Vector2( 403.25, 276.75 )
 shape = SubResource( 2 )
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
