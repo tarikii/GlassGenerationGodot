@@ -6,6 +6,7 @@ onready var damage = 100
 onready var goblinPlayer = get_node("../GoblinPlayer")
 onready var attacking = false
 var currentEnemyHitBox = null
+var attackCharactersList = []
 
 
 func _process(delta):
@@ -20,9 +21,20 @@ func _on_Area2D_area_entered(enemyHitBox):
 	if !attacking:
 		goblinPlayer.play("Attack Right")
 		attacking = true
+		if currentEnemyHitBox != null:
+			attackCharactersList.append(currentEnemyHitBox)
 		currentEnemyHitBox = enemyHitBox
 		if currentEnemyHitBox != null:
 			attackEnemy(currentEnemyHitBox)
+
+func _on_Area2D_area_exited(enemyHitBox):
+	if currentEnemyHitBox == enemyHitBox:
+		currentEnemyHitBox = null
+		attacking = false
+		goblinPlayer.play("Run Right")
+	if attackCharactersList.has(enemyHitBox):
+		attackCharactersList.erase(enemyHitBox)
+
 
 func attackEnemy(enemy):
 	if(is_instance_valid(enemy)):

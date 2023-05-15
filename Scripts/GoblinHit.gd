@@ -1,7 +1,6 @@
 extends Area2D
 
-export var max_health = 2000
-onready var health = $"../BaseEnemiga/HPBarEstructuraEnemiga"
+onready var health = $"../HPBarGoblin"
 
 func reduce_health(damage):
 	health.value -= damage

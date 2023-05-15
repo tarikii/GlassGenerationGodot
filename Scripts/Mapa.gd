@@ -371,7 +371,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == wizardScene.get_path():
 		if(goldEnemy >= 700):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-60, 0))
+			randomInstance.set_global_position(Vector2(-120, 0))
 			var animPlayer = randomInstance.get_node("WizardPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -380,6 +380,6 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(4.0)
+		spawn_timer = get_tree().create_timer(6.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()

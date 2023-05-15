@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Sprites/Goblin/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Goblin/Run.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Resources/Sprites/Goblin/Death.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Goblin.gd" type="Script" id=5]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
+[ext_resource path="res://Scripts/GoblinHit.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
@@ -592,11 +593,11 @@ radius = 19.0
 height = 38.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 24.5, 37.5 )
+extents = Vector2( 29.5, 37.5 )
 
-[node name="Goblin Node" type="Node2D"]
+[node name="Goblin Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
-[node name="GoblinPlayer" type="AnimationPlayer" parent="."]
+[node name="GoblinPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]
 root_node = NodePath("../Character")
 playback_speed = 0.5
 "anims/Attack Left" = SubResource( 7 )
@@ -609,24 +610,24 @@ anims/RESET = SubResource( 2 )
 "anims/Run Left" = SubResource( 5 )
 "anims/Run Right" = SubResource( 4 )
 
-[node name="Character" type="KinematicBody2D" parent="."]
+[node name="Character" type="KinematicBody2D" parent="." groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 591, 248 )
 collision_layer = 2
 collision_mask = 4095
 script = ExtResource( 5 )
 
-[node name="Goblin" type="Sprite" parent="Character"]
+[node name="Goblin" type="Sprite" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 78.7501, -59.9999 )
 scale = Vector2( 2.07, 1.88 )
 texture = ExtResource( 1 )
 hframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
 position = Vector2( 90, -44 )
 shape = SubResource( 10 )
 
-[node name="HPBarGoblin" type="TextureProgress" parent="Character"]
+[node name="HPBarGoblin" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 margin_left = 50.0
 margin_top = -96.0
 margin_right = 130.0
@@ -640,12 +641,14 @@ tint_under = Color( 1, 1, 1, 0 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
-[node name="Area2D" type="Area2D" parent="Character"]
+[node name="Area2D" type="Area2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
+script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
-position = Vector2( 92.5, -42.5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
+position = Vector2( 97.5, -42.5 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="GoblinPlayer" to="Character" method="_on_GoblinPlayer_animation_finished"]
 [connection signal="animation_started" from="GoblinPlayer" to="Character" method="_on_GoblinPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Sprites/Wizard/Run.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Wizard.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Resources/Sprites/Wizard/Attack2.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Sprites/Wizard/Death.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
+[ext_resource path="res://Scripts/WizardHit.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Attack Left"
@@ -593,9 +594,9 @@ height = 28.0
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 34.5, 34.5 )
 
-[node name="Wizard Node" type="Node2D"]
+[node name="Wizard Node" type="Node2D" groups=["PlayerCharacters"]]
 
-[node name="WizardPlayer" type="AnimationPlayer" parent="."]
+[node name="WizardPlayer" type="AnimationPlayer" parent="." groups=["PlayerCharacters"]]
 root_node = NodePath("../Character")
 playback_speed = 0.5
 "anims/Attack Left" = SubResource( 6 )
@@ -608,24 +609,24 @@ anims/RESET = SubResource( 2 )
 "anims/Run Left" = SubResource( 5 )
 "anims/Run Right" = SubResource( 3 )
 
-[node name="Character" type="KinematicBody2D" parent="."]
+[node name="Character" type="KinematicBody2D" parent="." groups=["PlayerCharacters"]]
 collision_layer = 512
 collision_mask = 4095
 script = ExtResource( 2 )
 
-[node name="Wizard" type="Sprite" parent="Character"]
+[node name="Wizard" type="Sprite" parent="Character" groups=["PlayerCharacters"]]
 position = Vector2( 554.75, 161 )
 scale = Vector2( 0.75974, 0.789474 )
 texture = ExtResource( 3 )
 hframes = 6
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["PlayerCharacters"]]
 visible = false
 position = Vector2( 549, 162 )
 shape = SubResource( 8 )
 
-[node name="HPBarWizard" type="TextureProgress" parent="Character"]
+[node name="HPBarWizard" type="TextureProgress" parent="Character" groups=["PlayerCharacters"]]
 margin_left = 510.0
 margin_top = 115.0
 margin_right = 590.0
@@ -639,9 +640,10 @@ tint_under = Color( 1, 1, 1, 0 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
-[node name="Area2D" type="Area2D" parent="Character"]
+[node name="Area2D" type="Area2D" parent="Character" groups=["PlayerCharacters"]]
+script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["PlayerCharacters"]]
 position = Vector2( 562.5, 163.5 )
 shape = SubResource( 11 )
 
