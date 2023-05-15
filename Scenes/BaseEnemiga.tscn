@@ -10,37 +10,37 @@ extents = Vector2( 118.5, 114.5 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 88.25, 88.25 )
 
-[node name="EstructuraEnemiga" type="KinematicBody2D" groups=["bases"]]
+[node name="EstructuraEnemiga" type="KinematicBody2D" groups=["IACharacters"]]
 collision_layer = 1024
 collision_mask = 2047
 
-[node name="BaseEnemiga" type="Sprite" parent="."]
+[node name="BaseEnemiga" type="Sprite" parent="." groups=["IACharacters"]]
 position = Vector2( 459, 255 )
 scale = Vector2( 0.743, 0.706 )
 texture = ExtResource( 1 )
 
-[node name="HPBarEstructuraEnemiga" type="TextureProgress" parent="BaseEnemiga"]
+[node name="HPBarEstructuraEnemiga" type="TextureProgress" parent="BaseEnemiga" groups=["IACharacters"]]
 margin_left = -127.86
 margin_top = -205.382
 margin_right = 72.14
 margin_bottom = -195.382
 rect_min_size = Vector2( 200, 10 )
-max_value = 2000.0
-value = 2000.0
+max_value = 4000.0
+value = 4000.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 2 )
-tint_under = Color( 1, 1, 1, 0 )
+tint_under = Color( 1, 0, 0, 1 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["IACharacters"]]
 visible = false
 position = Vector2( 455.5, 245.5 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["IACharacters"]]
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["IACharacters"]]
 position = Vector2( 403.25, 276.75 )
 shape = SubResource( 2 )

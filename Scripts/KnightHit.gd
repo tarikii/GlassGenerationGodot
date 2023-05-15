@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var health = $"../HPBarWizard"
+onready var health = $"../HPBarKnight"
 
 func reduce_health(damage):
 	health.value -= damage

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Sprites/FireWorm/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/FireWorm.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Resources/Sprites/FireWorm/Attack.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Sprites/FireWorm/Death.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
+[ext_resource path="res://Scripts/FireWormHit.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 28.5, 42 )
@@ -16,7 +17,6 @@ extents = Vector2( 33, 50.375 )
 [sub_resource type="Animation" id=6]
 resource_name = "Attack Left"
 length = 1.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
@@ -593,45 +593,46 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[node name="FireWorm Node" type="Node2D"]
+[node name="FireWorm Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
-[node name="Character" type="KinematicBody2D" parent="."]
+[node name="Character" type="KinematicBody2D" parent="." groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 487, 218 )
 collision_mask = 4095
 script = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Character"]
+[node name="Area2D" type="Area2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
+script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 61.5, -39 )
 shape = SubResource( 11 )
 
-[node name="HPBarFireWorm" type="TextureProgress" parent="Character"]
+[node name="HPBarFireWorm" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 margin_left = 18.0
 margin_top = -100.0
 margin_right = 98.0
 margin_bottom = -90.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 500.0
-value = 500.0
+max_value = 2500.0
+value = 2500.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
-tint_under = Color( 1, 1, 1, 0 )
+tint_under = Color( 1, 0, 0, 1 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
 position = Vector2( 44, -47.625 )
 shape = SubResource( 8 )
 
-[node name="FireWorm" type="Sprite" parent="Character"]
+[node name="FireWorm" type="Sprite" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 35.4999, -30.5 )
 scale = Vector2( 1.78889, 2.12222 )
 texture = ExtResource( 1 )
 hframes = 9
 
-[node name="FireWormPlayer" type="AnimationPlayer" parent="."]
+[node name="FireWormPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]
 root_node = NodePath("../Character/FireWorm")
 "anims/Attack Left" = SubResource( 6 )
 "anims/Attack Right" = SubResource( 7 )
@@ -644,5 +645,6 @@ anims/RESET = SubResource( 2 )
 "anims/Walk Right" = SubResource( 5 )
 
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]
 [connection signal="animation_finished" from="FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_finished"]
 [connection signal="animation_started" from="FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_started"]

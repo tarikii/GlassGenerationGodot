@@ -186,9 +186,9 @@ custom_colors/font_color = Color( 1, 0.913725, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 
 [node name="EstadisticasPersonaje" type="Control" parent="."]
-margin_left = 149.0
+margin_left = 9.0
 margin_top = 18.0
-margin_right = 372.0
+margin_right = 232.0
 margin_bottom = 153.0
 
 [node name="Velocidad" type="Label" parent="EstadisticasPersonaje"]

@@ -1,21 +1,23 @@
 extends KinematicBody2D
 
 export var speed = 150
-onready var damage = 100
+onready var damage = 150
 onready var goblinPlayer = get_node("../GoblinPlayer")
 onready var attacking = false
 var currentEnemyHitBox = null
 var attackCharactersList = []
-
+var direction = "Left"
 
 func _process(delta):
 	var velocity = Vector2()
 	if goblinPlayer.get_current_animation() == "Run Right":
 		# calcular la velocidad basada en la variable de velocidad
 		velocity.x += speed * delta
+		direction = "Right"
 	elif goblinPlayer.get_current_animation() == "Run Left":
 		# calcular la velocidad basada en la variable de velocidad
 		velocity.x -= speed * delta
+		direction = "Left"
 	# aplicar la velocidad al FireWorm
 	move_and_collide(velocity)
 
@@ -23,7 +25,7 @@ func _process(delta):
 func _on_Area2D_area_entered(enemyHitBox):
 	if !attacking:
 		if enemyHitBox.is_in_group("PlayerCharacters"):
-			goblinPlayer.play("Attack Right")
+			goblinPlayer.play("Attack " + direction)
 			attacking = true
 			if currentEnemyHitBox != null:
 				attackCharactersList.append(currentEnemyHitBox)
@@ -31,7 +33,7 @@ func _on_Area2D_area_entered(enemyHitBox):
 			if currentEnemyHitBox != null:
 				attackEnemy(currentEnemyHitBox)
 		elif enemyHitBox.is_in_group("IACharacters"):
-			goblinPlayer.play("Attack Left")
+			goblinPlayer.play("Attack " + direction)
 			attacking = true
 			if currentEnemyHitBox != null:
 				attackCharactersList.append(currentEnemyHitBox)
@@ -44,14 +46,14 @@ func _on_Area2D_area_exited(enemyHitBox):
 		if currentEnemyHitBox == enemyHitBox:
 			currentEnemyHitBox = null
 			attacking = false
-			goblinPlayer.play("Run Left")
+			goblinPlayer.play("Run " + direction)
 		if attackCharactersList.has(enemyHitBox):
 			attackCharactersList.erase(enemyHitBox)
 	elif enemyHitBox.is_in_group("IACharacters"):
 		if currentEnemyHitBox == enemyHitBox:
 			currentEnemyHitBox = null
 			attacking = false
-			goblinPlayer.play("Run Right")
+			goblinPlayer.play("Run " + direction)
 		if attackCharactersList.has(enemyHitBox):
 			attackCharactersList.erase(enemyHitBox)
 
@@ -63,14 +65,14 @@ func attackEnemy(enemy):
 				enemy.reduce_health(damage)
 		else:
 			attacking = false
-			goblinPlayer.play("Run Left")
+			goblinPlayer.play("Run " + direction)
 	elif enemy.is_in_group("IACharacters"):
 		if(is_instance_valid(enemy)):
 			if enemy.has_method("reduce_health"):
 				enemy.reduce_health(damage)
 		else:
 			attacking = false
-			goblinPlayer.play("Run Right")
+			goblinPlayer.play("Run " + direction)
 
 func _on_GoblinPlayer_animation_started(anim_name):
 	if anim_name == "Attack Right" and currentEnemyHitBox != null:

@@ -6,16 +6,18 @@ onready var wizardPlayer = get_node("../WizardPlayer")
 onready var attacking = false
 var currentEnemyHitBox = null
 var attackCharactersList = []
-
+var direction = "Left"
 
 func _process(delta):
 	var velocity = Vector2()
 	if wizardPlayer.get_current_animation() == "Run Right":
 		# calcular la velocidad basada en la variable de velocidad
 		velocity.x += speed * delta
+		direction = "Right"
 	elif wizardPlayer.get_current_animation() == "Run Left":
 		# calcular la velocidad basada en la variable de velocidad
 		velocity.x -= speed * delta
+		direction = "Left"
 	# aplicar la velocidad al FireWorm
 	move_and_collide(velocity)
 
@@ -23,7 +25,7 @@ func _process(delta):
 func _on_Area2D_area_entered(enemyHitBox):
 	if !attacking:
 		if enemyHitBox.is_in_group("PlayerCharacters"):
-			wizardPlayer.play("Attack Left")
+			wizardPlayer.play("Attack " + direction)
 			attacking = true
 			if currentEnemyHitBox != null:
 				attackCharactersList.append(currentEnemyHitBox)
@@ -31,7 +33,7 @@ func _on_Area2D_area_entered(enemyHitBox):
 			if currentEnemyHitBox != null:
 				attackEnemy(currentEnemyHitBox)
 		elif enemyHitBox.is_in_group("IACharacters"):
-			wizardPlayer.play("Attack Right")
+			wizardPlayer.play("Attack " + direction)
 			attacking = true
 			if currentEnemyHitBox != null:
 				attackCharactersList.append(currentEnemyHitBox)
@@ -44,14 +46,14 @@ func _on_Area2D_area_exited(enemyHitBox):
 		if currentEnemyHitBox == enemyHitBox:
 			currentEnemyHitBox = null
 			attacking = false
-			wizardPlayer.play("Run Left")
+			wizardPlayer.play("Run " + direction)
 		if attackCharactersList.has(enemyHitBox):
 			attackCharactersList.erase(enemyHitBox)
 	elif enemyHitBox.is_in_group("IACharacters"):
 		if currentEnemyHitBox == enemyHitBox:
 			currentEnemyHitBox = null
 			attacking = false
-			wizardPlayer.play("Run Right")
+			wizardPlayer.play("Run " + direction)
 		if attackCharactersList.has(enemyHitBox):
 			attackCharactersList.erase(enemyHitBox)
 
@@ -63,14 +65,14 @@ func attackEnemy(enemy):
 				enemy.reduce_health(damage)
 		else:
 			attacking = false
-			wizardPlayer.play("Run Left")
+			wizardPlayer.play("Run " + direction)
 	elif enemy.is_in_group("IACharacters"):
 		if(is_instance_valid(enemy)):
 			if enemy.has_method("reduce_health"):
 				enemy.reduce_health(damage)
 		else:
 			attacking = false
-			wizardPlayer.play("Run Right")
+			wizardPlayer.play("Run " + direction)
 
 func _on_WizardPlayer_animation_started(anim_name):
 	if anim_name == "Attack Right" and currentEnemyHitBox != null:

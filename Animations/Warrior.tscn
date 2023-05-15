@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Sprites/Warrior/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/Warrior/Attack.png" type="Texture" id=2]
@@ -6,10 +6,10 @@
 [ext_resource path="res://Scripts/Warrior.gd" type="Script" id=4]
 [ext_resource path="res://Resources/Sprites/Warrior/Death.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=6]
+[ext_resource path="res://Scripts/WarriorHit.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=4]
 resource_name = "Attack Left"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Warrior:texture")
 tracks/0/interp = 1
@@ -592,9 +592,9 @@ height = 50.0
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 27, 35.25 )
 
-[node name="Warrior Node" type="Node2D"]
+[node name="Warrior Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
-[node name="WarriorPlayer" type="AnimationPlayer" parent="."]
+[node name="WarriorPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]
 root_node = NodePath("../Character")
 playback_speed = 0.5
 "anims/Attack Left" = SubResource( 4 )
@@ -607,43 +607,45 @@ anims/RESET = SubResource( 2 )
 "anims/Run Left" = SubResource( 6 )
 "anims/Run Right" = SubResource( 7 )
 
-[node name="Character" type="KinematicBody2D" parent="."]
+[node name="Character" type="KinematicBody2D" parent="." groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 801, 146 )
 collision_layer = 128
 collision_mask = 4095
 script = ExtResource( 4 )
 
-[node name="Warrior" type="Sprite" parent="Character"]
+[node name="Warrior" type="Sprite" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( -403, 56.25 )
 scale = Vector2( 1.80247, 1.46605 )
 texture = ExtResource( 1 )
 hframes = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
 position = Vector2( -401, 54 )
 shape = SubResource( 10 )
 
-[node name="HPBarWarrior" type="TextureProgress" parent="Character"]
+[node name="HPBarWarrior" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 margin_left = -441.0
 margin_top = -6.0
 margin_right = -361.0
 margin_bottom = 4.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 400.0
-value = 400.0
+max_value = 1200.0
+value = 1200.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
-tint_under = Color( 1, 1, 1, 0 )
+tint_under = Color( 1, 0, 0, 1 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
-[node name="Area2D" type="Area2D" parent="Character"]
+[node name="Area2D" type="Area2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
+script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( -402, 52.25 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_finished"]
 [connection signal="animation_started" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]

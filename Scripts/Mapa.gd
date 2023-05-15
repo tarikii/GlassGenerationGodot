@@ -64,7 +64,7 @@ func pulsarBotonFireWorm():
 func showFireWormText():
 	$CostesPersonajes/CostePersonaje.set_text("Fire Worm: Cuesta 1000 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1000")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 2500")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 80")
 
 func hideFireWormText():
@@ -87,8 +87,8 @@ func pulsarBotonGoblin():
 func showGoblinText():
 	$CostesPersonajes/CostePersonaje.set_text("Goblin: Cuesta 150 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 400")
-	$"EstadisticasPersonaje/Daño".set_text("Daño: 100")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 750")
+	$"EstadisticasPersonaje/Daño".set_text("Daño: 150")
 
 func hideGoblinText():
 	$CostesPersonajes/CostePersonaje.set_text(" ")
@@ -110,7 +110,7 @@ func pulsarBotonHuntress():
 func showHuntressText():
 	$CostesPersonajes/CostePersonaje.set_text("Huntress: Cuesta 200 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 300")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 750")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 150")
 
 func hideHuntressText():
@@ -133,7 +133,7 @@ func pulsarBotonKnight():
 func showKnightText():
 	$CostesPersonajes/CostePersonaje.set_text("Knight: Cuesta 500 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 400")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1300")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 180")
 
 func hideKnightText():
@@ -156,8 +156,8 @@ func pulsarBotonMartialHero():
 func showMartialHeroText():
 	$CostesPersonajes/CostePersonaje.set_text("Martial Hero: Cuesta 250 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 300")
-	$"EstadisticasPersonaje/Daño".set_text("Daño: 180")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1000")
+	$"EstadisticasPersonaje/Daño".set_text("Daño: 220")
 
 func hideMartialHeroText():
 	$CostesPersonajes/CostePersonaje.set_text(" ")
@@ -179,8 +179,8 @@ func pulsarBotonMushroom():
 func showMushroomText():
 	$CostesPersonajes/CostePersonaje.set_text("Mushroom: Cuesta 900 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 300")
-	$"EstadisticasPersonaje/Daño".set_text("Daño: 400")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1300")
+	$"EstadisticasPersonaje/Daño".set_text("Daño: 600")
 
 func hideMushroomText():
 	$CostesPersonajes/CostePersonaje.set_text(" ")
@@ -202,7 +202,7 @@ func pulsarBotonUndead():
 func showUndeadText():
 	$CostesPersonajes/CostePersonaje.set_text("Undead: Cuesta 1000 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1000")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 2500")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 80")
 
 func hideUndeadText():
@@ -225,8 +225,8 @@ func pulsarBotonWarrior():
 func showWarriorText():
 	$CostesPersonajes/CostePersonaje.set_text("Warrior: Cuesta 400 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 400")
-	$"EstadisticasPersonaje/Daño".set_text("Daño: 220")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1200")
+	$"EstadisticasPersonaje/Daño".set_text("Daño: 200")
 
 func hideWarriorText():
 	$CostesPersonajes/CostePersonaje.set_text(" ")
@@ -248,7 +248,7 @@ func pulsarBotonWitch():
 func showWitchText():
 	$CostesPersonajes/CostePersonaje.set_text("Witch: Cuesta 800 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 300")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1100")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 350")
 
 func hideWitchText():
@@ -271,7 +271,7 @@ func pulsarBotonWizard():
 func showWizardText():
 	$CostesPersonajes/CostePersonaje.set_text("Wizard: Cuesta 700 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 300")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 900")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 300")
 
 func hideWizardText():
@@ -299,7 +299,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == goblinScene.get_path():
 		if(goldEnemy >= 150):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-1145,-35))
+			randomInstance.set_global_position(Vector2(-220,-35))
 			var animPlayer = randomInstance.get_node("GoblinPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -371,7 +371,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == wizardScene.get_path():
 		if(goldEnemy >= 700):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-120, 0))
+			randomInstance.set_global_position(Vector2(-110, 0))
 			var animPlayer = randomInstance.get_node("WizardPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -380,6 +380,6 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(6.0)
+		spawn_timer = get_tree().create_timer(7.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
