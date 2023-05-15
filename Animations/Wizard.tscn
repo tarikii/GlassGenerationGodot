@@ -10,7 +10,6 @@
 
 [sub_resource type="Animation" id=6]
 resource_name = "Attack Left"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Wizard:flip_h")
 tracks/0/interp = 1
@@ -650,3 +649,4 @@ shape = SubResource( 11 )
 [connection signal="animation_finished" from="WizardPlayer" to="Character" method="_on_WizardPlayer_animation_finished"]
 [connection signal="animation_started" from="WizardPlayer" to="Character" method="_on_WizardPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]

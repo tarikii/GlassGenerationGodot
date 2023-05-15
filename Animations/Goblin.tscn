@@ -10,7 +10,6 @@
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Goblin:texture")
 tracks/0/interp = 1
@@ -633,8 +632,8 @@ margin_top = -96.0
 margin_right = 130.0
 margin_bottom = -86.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 300.0
-value = 300.0
+max_value = 400.0
+value = 400.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 1, 1, 0 )

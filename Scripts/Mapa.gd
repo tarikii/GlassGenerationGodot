@@ -87,7 +87,7 @@ func pulsarBotonGoblin():
 func showGoblinText():
 	$CostesPersonajes/CostePersonaje.set_text("Goblin: Cuesta 150 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 300")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 400")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 100")
 
 func hideGoblinText():
