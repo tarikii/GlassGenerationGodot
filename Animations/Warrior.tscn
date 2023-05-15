@@ -73,7 +73,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack Right"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Warrior:texture")
 tracks/0/interp = 1
@@ -645,4 +644,6 @@ nine_patch_stretch = true
 position = Vector2( -402, 52.25 )
 shape = SubResource( 11 )
 
+[connection signal="animation_finished" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_finished"]
+[connection signal="animation_started" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]

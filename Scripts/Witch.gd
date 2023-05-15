@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
-export var speed = 100
+export var speed = 150
+var damage = 350
 onready var health = $HPBarWitch
-var anim_player
+onready var witchPlayer = get_node("../WitchPlayer")
+onready var attacking = false
+var currentEnemyHitBox = null
 
-func _ready():
-	anim_player = $WitchPlayer
 
 func _process(delta):
 	var velocity = Vector2()
@@ -15,6 +16,26 @@ func _process(delta):
 	move_and_collide(velocity)
 
 func _on_Area2D_area_entered(enemyHitBox):
-	var witchPlayer = get_node("../WitchPlayer")
-	witchPlayer.play("Attack Right")
-	speed = 0
+	if !attacking:
+		witchPlayer.play("Attack Right")
+		attacking = true
+		currentEnemyHitBox = enemyHitBox
+		if currentEnemyHitBox != null:
+			attackEnemy(currentEnemyHitBox)
+
+func attackEnemy(enemy):
+	if(is_instance_valid(enemy)):
+		if enemy.has_method("reduce_health"):
+			enemy.reduce_health(damage)
+	else:
+		attacking = false
+		witchPlayer.play("Run Right")
+
+func _on_WitchPlayer_animation_started(anim_name):
+	if anim_name == "Attack Right" and currentEnemyHitBox != null:
+		attackEnemy(currentEnemyHitBox)
+
+func _on_WitchPlayer_animation_finished(anim_name):
+	if anim_name == "Attack Right":
+		witchPlayer.play("Attack Right")
+		attacking = false

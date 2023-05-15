@@ -69,7 +69,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Right"
 length = 1.5
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
@@ -596,7 +595,7 @@ tracks/3/keys = {
 
 [node name="FireWorm Node" type="Node2D"]
 
-[node name="Character" type="KinematicBody2D" parent="." groups=["PlayerCharacters"]]
+[node name="Character" type="KinematicBody2D" parent="." groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 487, 218 )
 collision_mask = 4095
 script = ExtResource( 2 )
@@ -645,4 +644,5 @@ anims/RESET = SubResource( 2 )
 "anims/Walk Right" = SubResource( 5 )
 
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
-[connection signal="animation_changed" from="FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_changed"]
+[connection signal="animation_finished" from="FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_finished"]
+[connection signal="animation_started" from="FireWormPlayer" to="Character" method="_on_FireWormPlayer_animation_started"]

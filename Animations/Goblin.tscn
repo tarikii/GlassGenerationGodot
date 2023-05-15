@@ -73,7 +73,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "Attack Right"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Goblin:texture")
 tracks/0/interp = 1
@@ -647,4 +646,6 @@ nine_patch_stretch = true
 position = Vector2( 92.5, -42.5 )
 shape = SubResource( 11 )
 
+[connection signal="animation_finished" from="GoblinPlayer" to="Character" method="_on_GoblinPlayer_animation_finished"]
+[connection signal="animation_started" from="GoblinPlayer" to="Character" method="_on_GoblinPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
