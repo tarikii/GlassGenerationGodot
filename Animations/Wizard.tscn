@@ -591,11 +591,11 @@ radius = 19.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 34.5, 34.5 )
+extents = Vector2( 43.5, 34.5 )
 
-[node name="Wizard Node" type="Node2D" groups=["PlayerCharacters"]]
+[node name="Wizard Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
-[node name="WizardPlayer" type="AnimationPlayer" parent="." groups=["PlayerCharacters"]]
+[node name="WizardPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]
 root_node = NodePath("../Character")
 playback_speed = 0.5
 "anims/Attack Left" = SubResource( 6 )
@@ -608,42 +608,42 @@ anims/RESET = SubResource( 2 )
 "anims/Run Left" = SubResource( 5 )
 "anims/Run Right" = SubResource( 3 )
 
-[node name="Character" type="KinematicBody2D" parent="." groups=["PlayerCharacters"]]
+[node name="Character" type="KinematicBody2D" parent="." groups=["IACharacters", "PlayerCharacters"]]
 collision_layer = 512
 collision_mask = 4095
 script = ExtResource( 2 )
 
-[node name="Wizard" type="Sprite" parent="Character" groups=["PlayerCharacters"]]
+[node name="Wizard" type="Sprite" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 position = Vector2( 554.75, 161 )
 scale = Vector2( 0.75974, 0.789474 )
 texture = ExtResource( 3 )
 hframes = 6
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["PlayerCharacters"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
 position = Vector2( 549, 162 )
 shape = SubResource( 8 )
 
-[node name="HPBarWizard" type="TextureProgress" parent="Character" groups=["PlayerCharacters"]]
+[node name="HPBarWizard" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 margin_left = 510.0
 margin_top = 115.0
 margin_right = 590.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 900.0
-value = 900.0
+max_value = 1113.0
+value = 1113.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 0, 0, 1 )
 tint_progress = Color( 0.188235, 1, 0, 1 )
 nine_patch_stretch = true
 
-[node name="Area2D" type="Area2D" parent="Character" groups=["PlayerCharacters"]]
+[node name="Area2D" type="Area2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["PlayerCharacters"]]
-position = Vector2( 562.5, 163.5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
+position = Vector2( 551.5, 163.5 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="WizardPlayer" to="Character" method="_on_WizardPlayer_animation_finished"]

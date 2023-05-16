@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var health = $"../HPBarUndead"
+onready var kinematic = $".."
 
 func reduce_health(damage):
 	health.value -= damage

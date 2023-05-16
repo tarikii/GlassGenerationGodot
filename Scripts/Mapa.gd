@@ -51,20 +51,22 @@ func _process(delta):
 	waitSpawn()
 
 func pulsarBotonFireWorm():
-	if(gold >= 1000):
+	if(gold >= 500):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var fireWormInstance = fireWormScene.instance()
-		fireWormInstance.set_global_position(Vector2(-987, -20))
+		fireWormInstance.set_global_position(Vector2(-967, -20))
 		var animPlayer = fireWormInstance.get_node("FireWormPlayer")
 		animPlayer.play("Walk Right")
 		fireWormInstance.add_to_group("PlayerCharacters")
 		$Map.add_child(fireWormInstance)
-		gold -= 1000
+		gold -= 500
 		label_gold.set_text("Oro en el banco: " + str(gold))
 
 func showFireWormText():
 	$CostesPersonajes/CostePersonaje.set_text("Fire Worm: Cuesta 1000 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 2500")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 2510")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 80")
 
 func hideFireWormText():
@@ -75,6 +77,8 @@ func hideFireWormText():
 
 func pulsarBotonGoblin():
 	if(gold >= 150):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var goblinInstance = goblinScene.instance()
 		goblinInstance.set_global_position(Vector2(-1145, -35))
 		var animPlayer = goblinInstance.get_node("GoblinPlayer")
@@ -87,7 +91,7 @@ func pulsarBotonGoblin():
 func showGoblinText():
 	$CostesPersonajes/CostePersonaje.set_text("Goblin: Cuesta 150 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 750")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 770")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 150")
 
 func hideGoblinText():
@@ -98,6 +102,8 @@ func hideGoblinText():
 
 func pulsarBotonHuntress():
 	if(gold >= 200):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var huntressInstance = huntressScene.instance()
 		huntressInstance.set_global_position(Vector2(-1025, -35))
 		var animPlayer = huntressInstance.get_node("HuntressPlayer")
@@ -110,7 +116,7 @@ func pulsarBotonHuntress():
 func showHuntressText():
 	$CostesPersonajes/CostePersonaje.set_text("Huntress: Cuesta 200 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 750")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 770")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 150")
 
 func hideHuntressText():
@@ -121,6 +127,8 @@ func hideHuntressText():
 
 func pulsarBotonKnight():
 	if(gold >= 500):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var knightInstance = knightScene.instance()
 		knightInstance.set_global_position(Vector2(-1045, 0))
 		var animPlayer = knightInstance.get_node("KnightPlayer")
@@ -133,7 +141,7 @@ func pulsarBotonKnight():
 func showKnightText():
 	$CostesPersonajes/CostePersonaje.set_text("Knight: Cuesta 500 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1300")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1310")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 180")
 
 func hideKnightText():
@@ -144,6 +152,8 @@ func hideKnightText():
 
 func pulsarBotonMartialHero():
 	if(gold >= 250):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var martialHeroInstance = martialHeroScene.instance()
 		martialHeroInstance.set_global_position(Vector2(-985, -30))
 		var animPlayer = martialHeroInstance.get_node("MartialHeroPlayer")
@@ -156,7 +166,7 @@ func pulsarBotonMartialHero():
 func showMartialHeroText():
 	$CostesPersonajes/CostePersonaje.set_text("Martial Hero: Cuesta 250 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1000")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1117")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 220")
 
 func hideMartialHeroText():
@@ -167,8 +177,10 @@ func hideMartialHeroText():
 
 func pulsarBotonMushroom():
 	if(gold >= 900):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var mushroomInstance = mushroomScene.instance()
-		mushroomInstance.set_global_position(Vector2(-1015, -40))
+		mushroomInstance.set_global_position(Vector2(-1005, -40))
 		var animPlayer = mushroomInstance.get_node("MushroomPlayer")
 		animPlayer.play("Run Right")
 		mushroomInstance.add_to_group("PlayerCharacters")
@@ -179,7 +191,7 @@ func pulsarBotonMushroom():
 func showMushroomText():
 	$CostesPersonajes/CostePersonaje.set_text("Mushroom: Cuesta 900 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1300")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1310")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 600")
 
 func hideMushroomText():
@@ -189,20 +201,22 @@ func hideMushroomText():
 	$"EstadisticasPersonaje/Daño".set_text(" ")
 
 func pulsarBotonUndead():
-	if(gold >= 1000):
+	if(gold >= 500):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var undeadInstance = undeadScene.instance()
 		undeadInstance.set_global_position(Vector2(-1010, -70))
 		var animPlayer = undeadInstance.get_node("UndeadPlayer")
 		animPlayer.play("Walk Right")
 		undeadInstance.add_to_group("PlayerCharacters")
 		$Map.add_child(undeadInstance)
-		gold -= 1000
+		gold -= 500
 		label_gold.set_text("Oro en el banco: " + str(gold))
 
 func showUndeadText():
 	$CostesPersonajes/CostePersonaje.set_text("Undead: Cuesta 1000 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 2500")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 2510")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 80")
 
 func hideUndeadText():
@@ -213,8 +227,10 @@ func hideUndeadText():
 
 func pulsarBotonWarrior():
 	if(gold >= 400):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var warriorInstance = warriorScene.instance()
-		warriorInstance.set_global_position(Vector2(-880, -30))
+		warriorInstance.set_global_position(Vector2(-860, -30))
 		var animPlayer = warriorInstance.get_node("WarriorPlayer")
 		animPlayer.play("Run Right")
 		warriorInstance.add_to_group("PlayerCharacters")
@@ -225,7 +241,7 @@ func pulsarBotonWarrior():
 func showWarriorText():
 	$CostesPersonajes/CostePersonaje.set_text("Warrior: Cuesta 400 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1200")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1210")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 200")
 
 func hideWarriorText():
@@ -236,8 +252,10 @@ func hideWarriorText():
 
 func pulsarBotonWitch():
 	if(gold >= 800):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var witchInstance = witchScene.instance()
-		witchInstance.set_global_position(Vector2(-970, 0))
+		witchInstance.set_global_position(Vector2(-950, 0))
 		var animPlayer = witchInstance.get_node("WitchPlayer")
 		animPlayer.play("Run Right")
 		witchInstance.add_to_group("PlayerCharacters")
@@ -248,7 +266,7 @@ func pulsarBotonWitch():
 func showWitchText():
 	$CostesPersonajes/CostePersonaje.set_text("Witch: Cuesta 800 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 1100")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 1110")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 350")
 
 func hideWitchText():
@@ -259,8 +277,10 @@ func hideWitchText():
 
 func pulsarBotonWizard():
 	if(gold >= 700):
+		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
+		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var wizardInstance = wizardScene.instance()
-		wizardInstance.set_global_position(Vector2(-1020, 0))
+		wizardInstance.set_global_position(Vector2(-1010, 0))
 		var animPlayer = wizardInstance.get_node("WizardPlayer")
 		animPlayer.play("Run Right")
 		wizardInstance.add_to_group("PlayerCharacters")
@@ -271,7 +291,7 @@ func pulsarBotonWizard():
 func showWizardText():
 	$CostesPersonajes/CostePersonaje.set_text("Wizard: Cuesta 700 de oro")
 	$EstadisticasPersonaje/Velocidad.set_text("Velocidad: 150")
-	$EstadisticasPersonaje/Vida.set_text("Vida: 900")
+	$EstadisticasPersonaje/Vida.set_text("Vida: 910")
 	$"EstadisticasPersonaje/Daño".set_text("Daño: 300")
 
 func hideWizardText():
@@ -282,15 +302,13 @@ func hideWizardText():
 
 
 func spawnRandomEnemy():
-	var instances = [fireWormScene, goblinScene, huntressScene, knightScene, martialHeroScene, mushroomScene, undeadScene, warriorScene, witchScene, wizardScene]
+	var instances = [martialHeroScene, mushroomScene, undeadScene, warriorScene, witchScene, wizardScene]
 	var randomScene = instances[randi() % instances.size()]
-	
-	print(instances[randi() % instances.size()].get_path())
 	
 	if randomScene.get_path() == fireWormScene.get_path():
 		if(goldEnemy >= 1000):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(987,-20))
+			randomInstance.set_global_position(Vector2(-117,-30))
 			var animPlayer = randomInstance.get_node("FireWormPlayer")
 			animPlayer.play("Walk Left")
 			randomInstance.add_to_group("IACharacters")
@@ -308,7 +326,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == huntressScene.get_path():
 		if(goldEnemy >= 200):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-1025,-35))
+			randomInstance.set_global_position(Vector2(-125,-35))
 			var animPlayer = randomInstance.get_node("HuntressPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -317,7 +335,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == knightScene.get_path():
 		if(goldEnemy >= 500):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-1045, 0))
+			randomInstance.set_global_position(Vector2(-145, 0))
 			var animPlayer = randomInstance.get_node("KnightPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -326,7 +344,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == martialHeroScene.get_path():
 		if(goldEnemy >= 250):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-985, -30))
+			randomInstance.set_global_position(Vector2(-85, -30))
 			var animPlayer = randomInstance.get_node("MartialHeroPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -335,7 +353,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == mushroomScene.get_path():
 		if(goldEnemy >= 900):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-1015, -40))
+			randomInstance.set_global_position(Vector2(-135, -40))
 			var animPlayer = randomInstance.get_node("MushroomPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -344,7 +362,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == undeadScene.get_path():
 		if(goldEnemy >= 1000):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-1010, -70))
+			randomInstance.set_global_position(Vector2(-100, -70))
 			var animPlayer = randomInstance.get_node("UndeadPlayer")
 			animPlayer.play("Walk Left")
 			randomInstance.add_to_group("IACharacters")
@@ -353,7 +371,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == warriorScene.get_path():
 		if(goldEnemy >= 400):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-880, -30))
+			randomInstance.set_global_position(Vector2(-20, -30))
 			var animPlayer = randomInstance.get_node("WarriorPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -362,7 +380,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == witchScene.get_path():
 		if(goldEnemy >= 800):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-970, 0))
+			randomInstance.set_global_position(Vector2(-70, 0))
 			var animPlayer = randomInstance.get_node("WitchPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -380,6 +398,6 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(1.0)
+		spawn_timer = get_tree().create_timer(6.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()

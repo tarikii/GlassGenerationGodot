@@ -9,7 +9,7 @@
 [ext_resource path="res://Scripts/FireWormHit.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 28.5, 42 )
+extents = Vector2( 48, 42 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 33, 50.375 )
@@ -604,7 +604,7 @@ script = ExtResource( 2 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 61.5, -39 )
+position = Vector2( 57, -39 )
 shape = SubResource( 11 )
 
 [node name="HPBarFireWorm" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
@@ -613,8 +613,8 @@ margin_top = -100.0
 margin_right = 98.0
 margin_bottom = -90.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 2500.0
-value = 2500.0
+max_value = 2510.0
+value = 2510.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 0, 0, 1 )

@@ -463,7 +463,7 @@ radius = 35.0
 height = 6.0
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 24.5, 36 )
+extents = Vector2( 30.5, 36 )
 
 [node name="Knight Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -501,8 +501,8 @@ margin_top = -84.0
 margin_right = 370.0
 margin_bottom = -74.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 1300.0
-value = 1300.0
+max_value = 1310.0
+value = 1310.0
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 5 )
 tint_under = Color( 1, 0, 0, 1 )
@@ -513,7 +513,7 @@ nine_patch_stretch = true
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 337.5, -32 )
+position = Vector2( 335.5, -32 )
 shape = SubResource( 9 )
 
 [connection signal="animation_finished" from="KnightPlayer" to="Character" method="_on_KnightPlayer_animation_finished"]

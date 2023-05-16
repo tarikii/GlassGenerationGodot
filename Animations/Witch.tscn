@@ -592,7 +592,7 @@ radius = 17.0
 height = 48.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 28, 40 )
+extents = Vector2( 33, 40 )
 
 [node name="Witch Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -632,8 +632,8 @@ margin_top = -54.0
 margin_right = 56.0
 margin_bottom = -44.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 1100.0
-value = 1100.0
+max_value = 1110.0
+value = 1110.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 0, 0, 1 )

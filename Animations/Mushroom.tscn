@@ -13,7 +13,7 @@ radius = 20.0
 height = 26.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 19, 29.5 )
+extents = Vector2( 28, 29.5 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
@@ -467,7 +467,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "Run Light"
+resource_name = "Run Left"
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -621,8 +621,8 @@ margin_top = -54.0
 margin_right = 271.0
 margin_bottom = -44.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 1300.0
-value = 1300.0
+max_value = 1310.0
+value = 1310.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 0, 0, 1 )
@@ -633,7 +633,7 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 230, -3.5 )
+position = Vector2( 231, -3.5 )
 shape = SubResource( 11 )
 
 [node name="MushroomPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]
@@ -646,7 +646,7 @@ playback_speed = 0.5
 "anims/Idle Left" = SubResource( 3 )
 "anims/Idle Right" = SubResource( 1 )
 anims/RESET = SubResource( 2 )
-"anims/Run Light" = SubResource( 5 )
+"anims/Run Left" = SubResource( 5 )
 "anims/Run Right" = SubResource( 4 )
 
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]

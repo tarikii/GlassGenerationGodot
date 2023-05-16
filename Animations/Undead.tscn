@@ -13,7 +13,7 @@ radius = 33.0
 height = 54.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 36.5, 50.5 )
+extents = Vector2( 44.5, 50.5 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Attack Left"
@@ -511,8 +511,8 @@ margin_top = -73.0
 margin_right = 87.0
 margin_bottom = -63.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 2500.0
-value = 2500.0
+max_value = 2510.0
+value = 2510.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 0, 0, 1 )
@@ -523,7 +523,7 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 55.5, 1.5 )
+position = Vector2( 47.5, 1.5 )
 shape = SubResource( 11 )
 
 [node name="UndeadPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]

@@ -590,7 +590,7 @@ radius = 19.0
 height = 50.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 27, 35.25 )
+extents = Vector2( 38.5, 35.25 )
 
 [node name="Warrior Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -630,8 +630,8 @@ margin_top = -6.0
 margin_right = -361.0
 margin_bottom = 4.0
 rect_min_size = Vector2( 80, 10 )
-max_value = 1200.0
-value = 1200.0
+max_value = 1210.0
+value = 1210.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 6 )
 tint_under = Color( 1, 0, 0, 1 )
@@ -642,7 +642,7 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( -402, 52.25 )
+position = Vector2( -403.5, 52.25 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_finished"]
