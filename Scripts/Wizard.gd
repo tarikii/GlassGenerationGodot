@@ -7,6 +7,7 @@ onready var attacking = false
 var currentEnemyHitBox = null
 var attackCharactersList = []
 var direction = "Left"
+var isAttackingCurrentEnemy = false
 
 func _process(delta):
 	var velocity = Vector2()
@@ -24,22 +25,26 @@ func _process(delta):
 
 func _on_Area2D_area_entered(enemyHitBox):
 	if !attacking:
-		if enemyHitBox.is_in_group("PlayerCharacters"):
+		if (enemyHitBox.kinematic.direction == "Left" and direction == "Right") or (enemyHitBox.kinematic.direction == "Right" and direction == "Left"):
 			wizardPlayer.play("Attack " + direction)
 			attacking = true
+			isAttackingCurrentEnemy = true
 			if currentEnemyHitBox != null:
 				attackCharactersList.append(currentEnemyHitBox)
 			currentEnemyHitBox = enemyHitBox
 			if currentEnemyHitBox != null:
 				attackEnemy(currentEnemyHitBox)
-		elif enemyHitBox.is_in_group("IACharacters"):
-			wizardPlayer.play("Attack " + direction)
-			attacking = true
-			if currentEnemyHitBox != null:
-				attackCharactersList.append(currentEnemyHitBox)
-			currentEnemyHitBox = enemyHitBox
-			if currentEnemyHitBox != null:
-				attackEnemy(currentEnemyHitBox)
+		elif (enemyHitBox.kinematic.direction == "Left" and direction == "Left") or (enemyHitBox.kinematic.direction == "Right" and direction == "Right"):
+			if enemyHitBox != currentEnemyHitBox:
+				if isAttackingCurrentEnemy:
+					return
+				wizardPlayer.play("Attack " + direction)
+				attacking = true
+				if currentEnemyHitBox != null:
+					attackCharactersList.append(currentEnemyHitBox)
+				currentEnemyHitBox = enemyHitBox
+				if currentEnemyHitBox != null:
+					attackEnemy(currentEnemyHitBox)
 
 func _on_Area2D_area_exited(enemyHitBox):
 	if enemyHitBox.is_in_group("PlayerCharacters"):

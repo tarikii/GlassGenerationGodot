@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Sprites/Base/BaseJugador.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=2]
 [ext_resource path="res://Scripts/BaseJugador.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/BaseJugadorPosicion.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 118, 114.5 )
@@ -13,6 +14,7 @@ extents = Vector2( 88, 82.5 )
 [node name="EstructuraJugador" type="KinematicBody2D" groups=["PlayerCharacters"]]
 collision_layer = 2048
 collision_mask = 4095
+script = ExtResource( 4 )
 
 [node name="BaseJugador" type="Sprite" parent="." groups=["PlayerCharacters"]]
 position = Vector2( 397, 408 )

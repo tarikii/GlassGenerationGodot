@@ -260,7 +260,7 @@ func hideWitchText():
 func pulsarBotonWizard():
 	if(gold >= 700):
 		var wizardInstance = wizardScene.instance()
-		wizardInstance.set_global_position(Vector2(-1040, 0))
+		wizardInstance.set_global_position(Vector2(-1020, 0))
 		var animPlayer = wizardInstance.get_node("WizardPlayer")
 		animPlayer.play("Run Right")
 		wizardInstance.add_to_group("PlayerCharacters")
@@ -380,6 +380,6 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(7.0)
+		spawn_timer = get_tree().create_timer(1.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
