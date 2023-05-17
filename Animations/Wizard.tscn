@@ -137,7 +137,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=10]
 resource_name = "Death Left"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Wizard:flip_h")
 tracks/0/interp = 1
@@ -201,7 +200,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=9]
 resource_name = "Death Right"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Wizard:texture")
 tracks/0/interp = 1
@@ -647,6 +645,7 @@ position = Vector2( 551.5, 163.5 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="WizardPlayer" to="Character" method="_on_WizardPlayer_animation_finished"]
+[connection signal="animation_finished" from="WizardPlayer" to="Character/Area2D" method="_on_WizardPlayer_animation_finished"]
 [connection signal="animation_started" from="WizardPlayer" to="Character" method="_on_WizardPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]

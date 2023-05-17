@@ -51,16 +51,14 @@ func _process(delta):
 	waitSpawn()
 
 func pulsarBotonFireWorm():
-	if(gold >= 500):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
+	if(gold >= 1000):
 		var fireWormInstance = fireWormScene.instance()
 		fireWormInstance.set_global_position(Vector2(-967, -20))
 		var animPlayer = fireWormInstance.get_node("FireWormPlayer")
 		animPlayer.play("Walk Right")
 		fireWormInstance.add_to_group("PlayerCharacters")
 		$Map.add_child(fireWormInstance)
-		gold -= 500
+		gold -= 1000
 		label_gold.set_text("Oro en el banco: " + str(gold))
 
 func showFireWormText():
@@ -77,8 +75,6 @@ func hideFireWormText():
 
 func pulsarBotonGoblin():
 	if(gold >= 150):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var goblinInstance = goblinScene.instance()
 		goblinInstance.set_global_position(Vector2(-1145, -35))
 		var animPlayer = goblinInstance.get_node("GoblinPlayer")
@@ -102,8 +98,6 @@ func hideGoblinText():
 
 func pulsarBotonHuntress():
 	if(gold >= 200):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var huntressInstance = huntressScene.instance()
 		huntressInstance.set_global_position(Vector2(-1025, -35))
 		var animPlayer = huntressInstance.get_node("HuntressPlayer")
@@ -127,10 +121,8 @@ func hideHuntressText():
 
 func pulsarBotonKnight():
 	if(gold >= 500):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var knightInstance = knightScene.instance()
-		knightInstance.set_global_position(Vector2(-1045, 0))
+		knightInstance.set_global_position(Vector2(-1025, 0))
 		var animPlayer = knightInstance.get_node("KnightPlayer")
 		animPlayer.play("Run Right")
 		knightInstance.add_to_group("PlayerCharacters")
@@ -152,8 +144,6 @@ func hideKnightText():
 
 func pulsarBotonMartialHero():
 	if(gold >= 250):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var martialHeroInstance = martialHeroScene.instance()
 		martialHeroInstance.set_global_position(Vector2(-985, -30))
 		var animPlayer = martialHeroInstance.get_node("MartialHeroPlayer")
@@ -177,10 +167,8 @@ func hideMartialHeroText():
 
 func pulsarBotonMushroom():
 	if(gold >= 900):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var mushroomInstance = mushroomScene.instance()
-		mushroomInstance.set_global_position(Vector2(-1005, -40))
+		mushroomInstance.set_global_position(Vector2(-985, -40))
 		var animPlayer = mushroomInstance.get_node("MushroomPlayer")
 		animPlayer.play("Run Right")
 		mushroomInstance.add_to_group("PlayerCharacters")
@@ -202,8 +190,6 @@ func hideMushroomText():
 
 func pulsarBotonUndead():
 	if(gold >= 500):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var undeadInstance = undeadScene.instance()
 		undeadInstance.set_global_position(Vector2(-1010, -70))
 		var animPlayer = undeadInstance.get_node("UndeadPlayer")
@@ -227,8 +213,6 @@ func hideUndeadText():
 
 func pulsarBotonWarrior():
 	if(gold >= 400):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var warriorInstance = warriorScene.instance()
 		warriorInstance.set_global_position(Vector2(-860, -30))
 		var animPlayer = warriorInstance.get_node("WarriorPlayer")
@@ -252,8 +236,6 @@ func hideWarriorText():
 
 func pulsarBotonWitch():
 	if(gold >= 800):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var witchInstance = witchScene.instance()
 		witchInstance.set_global_position(Vector2(-950, 0))
 		var animPlayer = witchInstance.get_node("WitchPlayer")
@@ -277,8 +259,6 @@ func hideWitchText():
 
 func pulsarBotonWizard():
 	if(gold >= 700):
-		var wizard_timer = get_tree().create_timer(3.0)  # Crear temporizador de 2 segundos
-		yield(wizard_timer, "timeout")  # Esperar a que el temporizador se complete
 		var wizardInstance = wizardScene.instance()
 		wizardInstance.set_global_position(Vector2(-1010, 0))
 		var animPlayer = wizardInstance.get_node("WizardPlayer")
@@ -398,6 +378,6 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(6.0)
+		spawn_timer = get_tree().create_timer(4.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()

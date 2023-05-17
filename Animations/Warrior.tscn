@@ -10,6 +10,7 @@
 
 [sub_resource type="Animation" id=4]
 resource_name = "Attack Left"
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Warrior:texture")
 tracks/0/interp = 1
@@ -73,6 +74,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack Right"
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Warrior:texture")
 tracks/0/interp = 1
@@ -137,7 +139,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "Death Left"
 length = 0.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Warrior:texture")
 tracks/0/interp = 1
@@ -202,7 +203,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=9]
 resource_name = "Death Right"
 length = 0.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Warrior:texture")
 tracks/0/interp = 1
@@ -646,6 +646,7 @@ position = Vector2( -403.5, 52.25 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_finished"]
+[connection signal="animation_finished" from="WarriorPlayer" to="Character/Area2D" method="_on_WarriorPlayer_animation_finished"]
 [connection signal="animation_started" from="WarriorPlayer" to="Character" method="_on_WarriorPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]

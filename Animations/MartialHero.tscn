@@ -10,7 +10,7 @@
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
-length = 0.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("MartialHero:flip_h")
 tracks/0/interp = 1
@@ -74,7 +74,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "Attack Right"
-length = 0.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("MartialHero:texture")
 tracks/0/interp = 1
@@ -138,7 +138,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=9]
 resource_name = "Death Left"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("MartialHero:texture")
 tracks/0/interp = 1
@@ -202,7 +201,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=8]
 resource_name = "Death Right"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("MartialHero:texture")
 tracks/0/interp = 1
@@ -592,7 +590,7 @@ radius = 21.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 28.5, 39.75 )
+extents = Vector2( 38.5, 39.75 )
 
 [node name="MartialHero Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -649,6 +647,7 @@ position = Vector2( 522.5, 198 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="MartialHeroPlayer" to="Character" method="_on_MartialHeroPlayer_animation_finished"]
+[connection signal="animation_finished" from="MartialHeroPlayer" to="Character/Area2D" method="_on_MartialHeroPlayer_animation_finished"]
 [connection signal="animation_started" from="MartialHeroPlayer" to="Character" method="_on_MartialHeroPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]

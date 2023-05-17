@@ -139,7 +139,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=9]
 resource_name = "Death Left"
 length = 1.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Huntress:texture")
 tracks/0/interp = 1
@@ -204,7 +203,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "Death Right"
 length = 1.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Huntress:texture")
 tracks/0/interp = 1
@@ -592,7 +590,7 @@ radius = 14.0
 height = 48.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 45, 35 )
+extents = Vector2( 38.5, 35 )
 
 [node name="Huntress Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -644,10 +642,11 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 52, -54 )
+position = Vector2( 46.5, -54 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="HuntressPlayer" to="Character" method="_on_HuntressPlayer_animation_finished"]
+[connection signal="animation_finished" from="HuntressPlayer" to="Character/Area2D" method="_on_HuntressPlayer_animation_finished"]
 [connection signal="animation_started" from="HuntressPlayer" to="Character" method="_on_HuntressPlayer_animation_started"]
 [connection signal="area_entered" from="Character/Area2D" to="Character" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Character/Area2D" to="Character" method="_on_Area2D_area_exited"]
