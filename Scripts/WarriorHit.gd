@@ -12,4 +12,5 @@ func reduce_health(damage):
 
 
 func _on_WarriorPlayer_animation_finished(anim_name):
-	$"..".queue_free()
+	if anim_name == "Death " + kinematic.direction:
+		$"..".queue_free()

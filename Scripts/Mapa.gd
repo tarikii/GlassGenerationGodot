@@ -14,15 +14,21 @@ onready var warriorScene = load("res://Animations/Warrior.tscn")
 onready var witchScene = load("res://Animations/Witch.tscn")
 onready var wizardScene = load("res://Animations/Wizard.tscn")
 
-
 onready var label_gold = $EstadisticasJugador/OroBanco
 onready var gold_text = label_gold.get_text()
-onready var split_text = gold_text.split(": ")
-onready var gold_inicial = int(split_text[1])
+onready var split_textGold = gold_text.split(": ")
+onready var gold_inicial = int(split_textGold[1])
 onready var gold = gold_inicial
 onready var goldEnemy = gold_inicial
-var spawn_timer
+onready var label_points = $EstadisticasJugador/Puntos
+onready var points_text = label_points.get_text()
+onready var split_textPoints = points_text.split(": ")
+onready var points_inicial = int(split_textPoints[1])
+onready var points = points_inicial
 
+var spawn_timer
+var time_since_last_reward = 0.0
+var reward_interval = 5.0  # Intervalo de tiempo entre recompensas (en segundos)
 
 func _ready():
 	spawn_timer = get_tree().create_timer(0.0)
@@ -48,7 +54,11 @@ func _process(delta):
 		$Map/BotonesPersonajes/HBoxBotonesSuperior.rect_position.x -= SPEED / 2.5 * delta
 		$Map/BotonesPersonajes/HBoxBotonesInferior.rect_position.x -= SPEED / 2.5 * delta
 	
-	waitSpawn()
+	# waitSpawn()
+	time_since_last_reward += delta
+	if time_since_last_reward >= reward_interval:
+		winGoldPointsTime()
+		time_since_last_reward = 0.0
 
 func pulsarBotonFireWorm():
 	if(gold >= 1000):
@@ -282,7 +292,7 @@ func hideWizardText():
 
 
 func spawnRandomEnemy():
-	var instances = [martialHeroScene, mushroomScene, undeadScene, warriorScene, witchScene, wizardScene]
+	var instances = [fireWormScene,goblinScene,huntressScene,knightScene,martialHeroScene, mushroomScene, undeadScene, warriorScene, witchScene, wizardScene]
 	var randomScene = instances[randi() % instances.size()]
 	
 	if randomScene.get_path() == fireWormScene.get_path():
@@ -381,3 +391,12 @@ func waitSpawn():
 		spawn_timer = get_tree().create_timer(4.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
+
+
+func winGoldPointsTime():
+		gold += 100
+		goldEnemy += 100
+		points += 20
+		label_gold.set_text("Oro en el banco: " + str(gold))
+		label_points.set_text("Puntos: " + str(points))
+
