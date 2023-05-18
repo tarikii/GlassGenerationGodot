@@ -29,11 +29,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/InvitationItem.gd"
 }, {
-"base": "Object",
-"class": "PostgreSQLClient",
-"language": "GDScript",
-"path": "res://Scripts/PostgreSQLClient.gd"
-}, {
 "base": "PanelContainer",
 "class": "RepositoryItem",
 "language": "GDScript",
@@ -44,7 +39,6 @@ _global_script_class_icons={
 "GistItem": "",
 "GitAPI": "",
 "InvitationItem": "",
-"PostgreSQLClient": "",
 "RepositoryItem": ""
 }
 
@@ -60,6 +54,9 @@ PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+Nickname="*res://Scripts/GlobalNickname.gd"
+Result="*res://Scripts/GlobalResult.gd"
+Points="*res://Scripts/GlobalPoints.gd"
 
 [display]
 

@@ -397,5 +397,6 @@ func winGoldPointsTime():
 		gold += 100
 		goldEnemy += 100
 		points += 20
+		Points.points += 20
 		label_gold.set_text("Oro en el banco: " + str(gold))
 		label_points.set_text("Puntos: " + str(points))

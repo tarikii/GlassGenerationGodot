@@ -64,4 +64,5 @@ custom_colors/font_color = Color( 1, 0.494118, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Volver al menu"
 
+[connection signal="pressed" from="ColorRect/Enviar" to="." method="_on_Enviar_pressed"]
 [connection signal="pressed" from="ColorRect/VolverMenu" to="." method="_on_VolverMenu_pressed"]

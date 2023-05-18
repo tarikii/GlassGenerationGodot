@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export var speed = 150
-onready var damage = 180
+export var speed = 350#150
+onready var damage = 2500#180
 onready var knightPlayer = get_node("../KnightPlayer")
 onready var attacking = false
 var currentEnemyHitBox = null
