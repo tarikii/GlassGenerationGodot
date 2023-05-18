@@ -54,7 +54,7 @@ func _process(delta):
 		$Map/BotonesPersonajes/HBoxBotonesSuperior.rect_position.x -= SPEED / 2.5 * delta
 		$Map/BotonesPersonajes/HBoxBotonesInferior.rect_position.x -= SPEED / 2.5 * delta
 	
-	# waitSpawn()
+	waitSpawn()
 	time_since_last_reward += delta
 	if time_since_last_reward >= reward_interval:
 		winGoldPointsTime()
@@ -388,7 +388,7 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(4.0)
+		spawn_timer = get_tree().create_timer(2.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
 
@@ -399,4 +399,3 @@ func winGoldPointsTime():
 		points += 20
 		label_gold.set_text("Oro en el banco: " + str(gold))
 		label_points.set_text("Puntos: " + str(points))
-
