@@ -38,7 +38,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Empezar Partida"
 flat = true
 
-[node name="Puntuaciones" type="Button" parent="VBoxBotones"]
+[node name="Instrucciones" type="Button" parent="VBoxBotones"]
 margin_top = 51.0
 margin_right = 272.0
 margin_bottom = 87.0
@@ -59,5 +59,5 @@ flat = true
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
 
 [connection signal="pressed" from="VBoxBotones/Empezar Partida" to="." method="cambiarEscenaEmpezarPartida"]
-[connection signal="pressed" from="VBoxBotones/Puntuaciones" to="." method="cambiarEscenaPuntuaciones"]
+[connection signal="pressed" from="VBoxBotones/Instrucciones" to="." method="cambiarEscenaPuntuaciones"]
 [connection signal="pressed" from="VBoxBotones/Salir" to="." method="onSalirButtonPressed"]
