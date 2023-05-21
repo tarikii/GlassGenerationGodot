@@ -9,7 +9,7 @@
 [ext_resource path="res://Scripts/FireWormHit.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 32, 42 )
+extents = Vector2( 37, 42 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 29.5, 50.375 )
@@ -602,7 +602,7 @@ script = ExtResource( 2 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 50, -39 )
+position = Vector2( 49, -39 )
 shape = SubResource( 11 )
 
 [node name="HPBarFireWorm" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]

@@ -1,6 +1,7 @@
 extends Control
 var escenaJugar
 var escenaInstrucciones
+var escenaPuntuaciones
 
 func cambiarEscenaEmpezarPartida():
 	escenaJugar = "res://Scenes/Mapa.tscn"
@@ -8,6 +9,10 @@ func cambiarEscenaEmpezarPartida():
 	
 
 func cambiarEscenaPuntuaciones():
+	escenaPuntuaciones = "res://Scenes/Puntuaciones.tscn"
+	get_tree().change_scene(escenaPuntuaciones)
+
+func cambiarEscenaInstrucciones():
 	escenaInstrucciones = "res://Scenes/Instrucciones.tscn"
 	get_tree().change_scene(escenaInstrucciones)
 

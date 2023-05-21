@@ -568,7 +568,7 @@ radius = 34.0
 height = 6.0
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 31, 36 )
+extents = Vector2( 41.5, 36 )
 
 [node name="Knight Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -620,7 +620,7 @@ nine_patch_stretch = true
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 331, -32 )
+position = Vector2( 337.5, -32 )
 shape = SubResource( 9 )
 
 [connection signal="animation_finished" from="KnightPlayer" to="Character" method="_on_KnightPlayer_animation_finished"]

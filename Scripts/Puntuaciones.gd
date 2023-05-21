@@ -1,28 +1,72 @@
-extends Node2D
+extends Control
 var escenaMenu
-var primerLabelLleno = false
 
 func _ready():
-	$Fondomenu/ColorRect/VBoxNicknames/Nickname.text = ""
-	$Fondomenu/ColorRect/VBoxNicknames/Nickname2.text = ""
-	rellenarPuntuaciones()
+#	if $Fondomenu/ColorRect/VBoxNicknames/Nickname.text == "":
+#		$Fondomenu/ColorRect/VBoxNicknames/Nickname.text = Nickname.nickname
+#
+#	elif $Fondomenu/ColorRect/VBoxNicknames/Nickname2.text == "":
+#		$Fondomenu/ColorRect/VBoxNicknames/Nickname2.text = Nickname.nickname
+#
+#	if Result.result != null:
+#		$Fondomenu/ColorRect/VBoxResult/Result.text = Result.result
+#
+#	$Fondomenu/ColorRect/VBoxPoints/Points.text = str(Points.points)
+	
+	var nombres = File.new()
+	var puntuaciones = File.new()
+	var resultados = File.new()
+	
+	nombres.open("res://Resources/Registros/nombres.txt", File.READ)
+	puntuaciones.open("res://Resources/Registros/puntuaciones.txt", File.READ)
+	resultados.open("res://Resources/Registros/resultados.txt", File.READ)
+	
+#	nombres.get_as_text()
+#	print(nombres)
+#
+#	puntuaciones.get_as_text()
+#	print(puntuaciones)
+	var i = 0
+	print(nombres.get_len())
+	while i < nombres.get_len():
+		var nombre=nombres.get_line()
+		var puntuacion=puntuaciones.get_line()
+		var resultado=resultados.get_line()
+		match nombre:
+			"":
+				print("nada")
+		
+			_:
+				var jugadorl = Label.new()
+				jugadorl.set_text(nombre)
+				jugadorl.set_size(Vector2(319,37))
+				jugadorl.add_color_override("font_color", Color(0, 1, 1, 1))
+				jugadorl.set_align(1)
+
+				var puntuacionl = Label.new()
+				puntuacionl.set_text(puntuacion)
+				puntuacionl.set_size(Vector2(319,37))
+				puntuacionl.add_color_override("font_color", Color(0, 1, 1, 1))
+				puntuacionl.set_align(1)
+				
+				var resultadol = Label.new()
+				resultadol.set_text(resultado)
+				resultadol.set_size(Vector2(319,37))
+				resultadol.add_color_override("font_color", Color(0, 1, 1, 1))
+				resultadol.set_align(1)
+
+				$Fondomenu/ColorRect/VBoxNicknames.add_child(jugadorl)
+				$Fondomenu/ColorRect/VBoxPoints.add_child(puntuacionl)
+				$Fondomenu/ColorRect/VBoxResult.add_child(resultadol)
+			
+		i += 1
+	
+#	for x in nombres:
+#		var jugador = Label.new()
+#		var puntuacion = Label.new()
+	nombres.close()
+	puntuaciones.close()
 
 func volverAlMenu():
 	escenaMenu = "res://Scenes/Menu.tscn"
 	get_tree().change_scene(escenaMenu)
-
-func rellenarPuntuaciones():
-	if Nickname.nickname == null:
-		pass
-	else:
-		var nickname = Nickname.nickname
-		var label1 = $Fondomenu/ColorRect/VBoxNicknames/Nickname
-		var label2 = $Fondomenu/ColorRect/VBoxNicknames/Nickname2
-
-		if label1.text == "":
-			label1.text = nickname
-		elif label2.text == "":
-			label2.text = nickname
-		else:
-			label1.text = nickname
-
