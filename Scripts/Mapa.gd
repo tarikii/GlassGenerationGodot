@@ -410,7 +410,7 @@ func spawnRandomEnemy():
 			goldEnemy -= 700
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(2.0)
+		spawn_timer = get_tree().create_timer(3.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
 

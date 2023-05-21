@@ -2,16 +2,6 @@ extends Control
 var escenaMenu
 
 func _ready():
-#	if $Fondomenu/ColorRect/VBoxNicknames/Nickname.text == "":
-#		$Fondomenu/ColorRect/VBoxNicknames/Nickname.text = Nickname.nickname
-#
-#	elif $Fondomenu/ColorRect/VBoxNicknames/Nickname2.text == "":
-#		$Fondomenu/ColorRect/VBoxNicknames/Nickname2.text = Nickname.nickname
-#
-#	if Result.result != null:
-#		$Fondomenu/ColorRect/VBoxResult/Result.text = Result.result
-#
-#	$Fondomenu/ColorRect/VBoxPoints/Points.text = str(Points.points)
 	
 	var nombres = File.new()
 	var puntuaciones = File.new()
@@ -21,11 +11,7 @@ func _ready():
 	puntuaciones.open("res://Resources/Registros/puntuaciones.txt", File.READ)
 	resultados.open("res://Resources/Registros/resultados.txt", File.READ)
 	
-#	nombres.get_as_text()
-#	print(nombres)
-#
-#	puntuaciones.get_as_text()
-#	print(puntuaciones)
+	
 	var i = 0
 	print(nombres.get_len())
 	while i < nombres.get_len():
@@ -61,9 +47,7 @@ func _ready():
 			
 		i += 1
 	
-#	for x in nombres:
-#		var jugador = Label.new()
-#		var puntuacion = Label.new()
+	
 	nombres.close()
 	puntuaciones.close()
 
