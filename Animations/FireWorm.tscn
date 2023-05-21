@@ -9,10 +9,10 @@
 [ext_resource path="res://Scripts/FireWormHit.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 48, 42 )
+extents = Vector2( 32, 42 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 33, 50.375 )
+extents = Vector2( 29.5, 50.375 )
 
 [sub_resource type="Animation" id=6]
 resource_name = "Attack Left"
@@ -602,7 +602,7 @@ script = ExtResource( 2 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 57, -39 )
+position = Vector2( 50, -39 )
 shape = SubResource( 11 )
 
 [node name="HPBarFireWorm" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
@@ -621,7 +621,7 @@ nine_patch_stretch = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
-position = Vector2( 44, -47.625 )
+position = Vector2( 47.5, -47.625 )
 shape = SubResource( 8 )
 
 [node name="FireWorm" type="Sprite" parent="Character" groups=["IACharacters", "PlayerCharacters"]]

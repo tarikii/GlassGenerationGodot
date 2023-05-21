@@ -44,7 +44,7 @@ margin_right = 272.0
 margin_bottom = 87.0
 custom_colors/font_color = Color( 0.392157, 0.917647, 0.0627451, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Puntuaciones"
+text = "Instrucciones"
 flat = true
 
 [node name="Salir" type="Button" parent="VBoxBotones"]

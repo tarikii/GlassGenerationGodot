@@ -9,11 +9,11 @@
 [ext_resource path="res://Scripts/UndeadHit.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 33.0
+radius = 30.0
 height = 54.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 44.5, 50.5 )
+extents = Vector2( 35, 50.5 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Attack Left"
@@ -500,7 +500,7 @@ hframes = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
-position = Vector2( 53, 2 )
+position = Vector2( 45, 1 )
 shape = SubResource( 10 )
 
 [node name="HPBarUndead" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
@@ -521,7 +521,7 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 47.5, 1.5 )
+position = Vector2( 54, 1.5 )
 shape = SubResource( 11 )
 
 [node name="UndeadPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]

@@ -590,7 +590,7 @@ radius = 19.0
 height = 38.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 29.5, 37.5 )
+extents = Vector2( 26.5, 37.5 )
 
 [node name="Goblin Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -620,8 +620,7 @@ texture = ExtResource( 1 )
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
-visible = false
-position = Vector2( 90, -44 )
+position = Vector2( 86, -44 )
 shape = SubResource( 10 )
 
 [node name="HPBarGoblin" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
@@ -642,7 +641,7 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 97.5, -42.5 )
+position = Vector2( 85.5, -42.5 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="GoblinPlayer" to="Character" method="_on_GoblinPlayer_animation_finished"]

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export var speed = 350#150
-onready var damage = 2500#180
+export var speed = 150
+onready var damage = 180
 onready var knightPlayer = get_node("../KnightPlayer")
 onready var attacking = false
 var currentEnemyHitBox = null
@@ -10,6 +10,7 @@ var direction = "Left"
 var isAttackingEnemy = false
 var isIdle = false
 var wasBehind = false
+var collidedWithStatic
 
 func _process(delta):
 	var velocity = Vector2()
@@ -26,8 +27,8 @@ func _process(delta):
 
 
 func _on_Area2D_area_entered(enemyHitBox):
-	if !attacking:
-		if (enemyHitBox.kinematic.direction == "Left" and direction == "Right") or (enemyHitBox.kinematic.direction == "Right" and direction == "Left"):
+	if enemyHitBox.kinematic.direction == "Static":
+		if currentEnemyHitBox != enemyHitBox:
 			knightPlayer.play("Attack " + direction)
 			attacking = true
 			isAttackingEnemy = true
@@ -37,24 +38,40 @@ func _on_Area2D_area_entered(enemyHitBox):
 			currentEnemyHitBox = enemyHitBox
 			if currentEnemyHitBox != null:
 				attackEnemy(currentEnemyHitBox)
-		elif (enemyHitBox.kinematic.direction == "Left" and direction == "Left") or (enemyHitBox.kinematic.direction == "Right" and direction == "Right"):
-			if enemyHitBox != currentEnemyHitBox:
-				isIdle = true
-				if isAttackingEnemy:
-					return
-				if !isIdle:
-					knightPlayer.play("Attack " + direction)
-					attacking = true
-					if currentEnemyHitBox != null:
-						attackCharactersList.append(currentEnemyHitBox)
-					currentEnemyHitBox = enemyHitBox
-					if currentEnemyHitBox != null:
-						attackEnemy(currentEnemyHitBox)
-					wasBehind = false
-				else:
-					knightPlayer.play("Idle " + direction)
-					attacking = false
-					wasBehind = true
+			collidedWithStatic = true
+	else:
+		if collidedWithStatic:
+			return
+	
+		if !attacking:
+			if (enemyHitBox.kinematic.direction == "Left" and direction == "Right") or (enemyHitBox.kinematic.direction == "Right" and direction == "Left"):
+				knightPlayer.play("Attack " + direction)
+				attacking = true
+				isAttackingEnemy = true
+				isIdle = false
+				if currentEnemyHitBox != null:
+					attackCharactersList.append(currentEnemyHitBox)
+				currentEnemyHitBox = enemyHitBox
+				if currentEnemyHitBox != null:
+					attackEnemy(currentEnemyHitBox)
+			elif (enemyHitBox.kinematic.direction == "Left" and direction == "Left") or (enemyHitBox.kinematic.direction == "Right" and direction == "Right"):
+				if enemyHitBox != currentEnemyHitBox:
+					isIdle = true
+					if isAttackingEnemy:
+						return
+					if !isIdle:
+						knightPlayer.play("Attack " + direction)
+						attacking = true
+						if currentEnemyHitBox != null:
+							attackCharactersList.append(currentEnemyHitBox)
+						currentEnemyHitBox = enemyHitBox
+						if currentEnemyHitBox != null:
+							attackEnemy(currentEnemyHitBox)
+						wasBehind = false
+					else:
+						knightPlayer.play("Idle " + direction)
+						attacking = false
+						wasBehind = true
 
 func _on_Area2D_area_exited(enemyHitBox):
 	if (enemyHitBox.kinematic.direction == "Left" and direction == "Right") or (enemyHitBox.kinematic.direction == "Right" and direction == "Left"):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Resources/Fonts/Sharp Retro.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Ganador.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Music/a-hero-of-the-80s.mp3" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -63,6 +64,11 @@ margin_bottom = 584.0
 custom_colors/font_color = Color( 1, 0.494118, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Volver al menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -31.682
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/Enviar" to="." method="_on_Enviar_pressed"]
 [connection signal="pressed" from="ColorRect/VolverMenu" to="." method="_on_VolverMenu_pressed"]

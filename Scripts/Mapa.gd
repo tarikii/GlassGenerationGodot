@@ -2,7 +2,6 @@ extends Node2D
 
 const SPEED = 500
 
-onready var base_enemiga = $Map/EstructuraEnemiga
 onready var fireWormScene = load("res://Animations/FireWorm.tscn")
 onready var goblinScene = load("res://Animations/Goblin.tscn")
 onready var huntressScene = load("res://Animations/Huntress.tscn")
@@ -86,7 +85,7 @@ func hideFireWormText():
 func pulsarBotonGoblin():
 	if(gold >= 150):
 		var goblinInstance = goblinScene.instance()
-		goblinInstance.set_global_position(Vector2(-1145, -35))
+		goblinInstance.set_global_position(Vector2(-1135, -35))
 		var animPlayer = goblinInstance.get_node("GoblinPlayer")
 		animPlayer.play("Run Right")
 		goblinInstance.add_to_group("PlayerCharacters")
@@ -132,7 +131,7 @@ func hideHuntressText():
 func pulsarBotonKnight():
 	if(gold >= 500):
 		var knightInstance = knightScene.instance()
-		knightInstance.set_global_position(Vector2(-1025, 0))
+		knightInstance.set_global_position(Vector2(-1005, 0))
 		var animPlayer = knightInstance.get_node("KnightPlayer")
 		animPlayer.play("Run Right")
 		knightInstance.add_to_group("PlayerCharacters")
@@ -155,7 +154,7 @@ func hideKnightText():
 func pulsarBotonMartialHero():
 	if(gold >= 250):
 		var martialHeroInstance = martialHeroScene.instance()
-		martialHeroInstance.set_global_position(Vector2(-985, -30))
+		martialHeroInstance.set_global_position(Vector2(-950, -30))
 		var animPlayer = martialHeroInstance.get_node("MartialHeroPlayer")
 		animPlayer.play("Run Right")
 		martialHeroInstance.add_to_group("PlayerCharacters")
@@ -178,7 +177,7 @@ func hideMartialHeroText():
 func pulsarBotonMushroom():
 	if(gold >= 900):
 		var mushroomInstance = mushroomScene.instance()
-		mushroomInstance.set_global_position(Vector2(-985, -40))
+		mushroomInstance.set_global_position(Vector2(-965, -40))
 		var animPlayer = mushroomInstance.get_node("MushroomPlayer")
 		animPlayer.play("Run Right")
 		mushroomInstance.add_to_group("PlayerCharacters")
@@ -201,7 +200,7 @@ func hideMushroomText():
 func pulsarBotonUndead():
 	if(gold >= 500):
 		var undeadInstance = undeadScene.instance()
-		undeadInstance.set_global_position(Vector2(-1010, -70))
+		undeadInstance.set_global_position(Vector2(-990, -70))
 		var animPlayer = undeadInstance.get_node("UndeadPlayer")
 		animPlayer.play("Walk Right")
 		undeadInstance.add_to_group("PlayerCharacters")
@@ -247,7 +246,7 @@ func hideWarriorText():
 func pulsarBotonWitch():
 	if(gold >= 800):
 		var witchInstance = witchScene.instance()
-		witchInstance.set_global_position(Vector2(-950, 0))
+		witchInstance.set_global_position(Vector2(-940, 0))
 		var animPlayer = witchInstance.get_node("WitchPlayer")
 		animPlayer.play("Run Right")
 		witchInstance.add_to_group("PlayerCharacters")
@@ -270,7 +269,7 @@ func hideWitchText():
 func pulsarBotonWizard():
 	if(gold >= 700):
 		var wizardInstance = wizardScene.instance()
-		wizardInstance.set_global_position(Vector2(-1010, 0))
+		wizardInstance.set_global_position(Vector2(-1000, 0))
 		var animPlayer = wizardInstance.get_node("WizardPlayer")
 		animPlayer.play("Run Right")
 		wizardInstance.add_to_group("PlayerCharacters")
@@ -298,7 +297,7 @@ func spawnRandomEnemy():
 	if randomScene.get_path() == fireWormScene.get_path():
 		if(goldEnemy >= 1000):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-117,-30))
+			randomInstance.set_global_position(Vector2(-137,-30))
 			var animPlayer = randomInstance.get_node("FireWormPlayer")
 			animPlayer.play("Walk Left")
 			randomInstance.add_to_group("IACharacters")
@@ -307,7 +306,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == goblinScene.get_path():
 		if(goldEnemy >= 150):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-220,-35))
+			randomInstance.set_global_position(Vector2(-250,-35))
 			var animPlayer = randomInstance.get_node("GoblinPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -316,7 +315,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == huntressScene.get_path():
 		if(goldEnemy >= 200):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-125,-35))
+			randomInstance.set_global_position(Vector2(-145,-35))
 			var animPlayer = randomInstance.get_node("HuntressPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -334,7 +333,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == martialHeroScene.get_path():
 		if(goldEnemy >= 250):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-85, -30))
+			randomInstance.set_global_position(Vector2(-75, -30))
 			var animPlayer = randomInstance.get_node("MartialHeroPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -343,7 +342,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == mushroomScene.get_path():
 		if(goldEnemy >= 900):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-135, -40))
+			randomInstance.set_global_position(Vector2(-85, -40))
 			var animPlayer = randomInstance.get_node("MushroomPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -361,7 +360,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == warriorScene.get_path():
 		if(goldEnemy >= 400):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-20, -30))
+			randomInstance.set_global_position(Vector2(20, -30))
 			var animPlayer = randomInstance.get_node("WarriorPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -370,7 +369,7 @@ func spawnRandomEnemy():
 	elif randomScene.get_path() == witchScene.get_path():
 		if(goldEnemy >= 800):
 			var randomInstance = randomScene.instance()
-			randomInstance.set_global_position(Vector2(-70, 0))
+			randomInstance.set_global_position(Vector2(-60, 0))
 			var animPlayer = randomInstance.get_node("WitchPlayer")
 			animPlayer.play("Run Left")
 			randomInstance.add_to_group("IACharacters")
@@ -388,13 +387,13 @@ func spawnRandomEnemy():
 
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(2.0)
+		spawn_timer = get_tree().create_timer(4.0)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
 
 
 func winGoldPointsTime():
-		gold += 100
+		gold += 10000
 		goldEnemy += 100
 		points += 20
 		Points.points += 20

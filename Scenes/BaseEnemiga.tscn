@@ -9,7 +9,7 @@
 extents = Vector2( 118.5, 114.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 88.25, 88.25 )
+extents = Vector2( 87.25, 88.25 )
 
 [node name="EstructuraEnemiga" type="KinematicBody2D" groups=["IACharacters"]]
 collision_layer = 1024
@@ -44,5 +44,5 @@ shape = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["IACharacters"]]
-position = Vector2( 403.25, 276.75 )
+position = Vector2( 404.25, 276.75 )
 shape = SubResource( 2 )

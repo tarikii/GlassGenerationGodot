@@ -585,11 +585,11 @@ tracks/4/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 19.0
+radius = 21.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 43.5, 34.5 )
+extents = Vector2( 27.5, 34.5 )
 
 [node name="Wizard Node" type="Node2D" groups=["IACharacters", "PlayerCharacters"]]
 
@@ -620,7 +620,7 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
 visible = false
-position = Vector2( 549, 162 )
+position = Vector2( 549, 164 )
 shape = SubResource( 8 )
 
 [node name="HPBarWizard" type="TextureProgress" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
@@ -641,7 +641,7 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 551.5, 163.5 )
+position = Vector2( 550.5, 164 )
 shape = SubResource( 11 )
 
 [connection signal="animation_finished" from="WizardPlayer" to="Character" method="_on_WizardPlayer_animation_finished"]

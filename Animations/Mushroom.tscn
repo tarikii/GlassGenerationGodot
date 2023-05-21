@@ -13,7 +13,7 @@ radius = 20.0
 height = 26.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 28, 29.5 )
+extents = Vector2( 23, 29.5 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "Attack Left"
@@ -609,7 +609,6 @@ texture = ExtResource( 2 )
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["IACharacters", "PlayerCharacters"]]
-visible = false
 position = Vector2( 230, -6 )
 shape = SubResource( 10 )
 
@@ -631,7 +630,8 @@ nine_patch_stretch = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D" groups=["IACharacters", "PlayerCharacters"]]
-position = Vector2( 231, -3.5 )
+visible = false
+position = Vector2( 232, -3.5 )
 shape = SubResource( 11 )
 
 [node name="MushroomPlayer" type="AnimationPlayer" parent="." groups=["IACharacters", "PlayerCharacters"]]
