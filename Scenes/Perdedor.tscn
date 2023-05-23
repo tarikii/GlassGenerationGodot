@@ -65,8 +65,9 @@ custom_colors/font_color = Color( 1, 0.494118, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Volver al menu"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -17.727
 autoplay = true
 
 [connection signal="pressed" from="ColorRect/Enviar" to="." method="_on_Enviar_pressed"]

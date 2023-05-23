@@ -34,6 +34,7 @@ var time_since_last_reward = 0.0
 var reward_interval = 5.0  # Intervalo de tiempo entre recompensas (en segundos)
 
 func _ready():
+	MusicMenu.stop_musicMenu()
 	spawn_timer = get_tree().create_timer(0.0)
 
 func _process(delta):
@@ -172,7 +173,7 @@ func hideKnightText():
 func pulsarBotonMartialHero():
 	if(gold >= 250 && personajeSacado == false):
 		var martialHeroInstance = martialHeroScene.instance()
-		martialHeroInstance.set_global_position(Vector2(-985, -30))
+		martialHeroInstance.set_global_position(Vector2(-965, -30))
 		var animPlayer = martialHeroInstance.get_node("MartialHeroPlayer")
 		animPlayer.play("Run Right")
 		martialHeroInstance.add_to_group("PlayerCharacters")
@@ -410,7 +411,7 @@ func spawnRandomEnemy():
 			goldEnemy -= 700
 func waitSpawn():
 	if spawn_timer.time_left <= 0.0:
-		spawn_timer = get_tree().create_timer(3.0)
+		spawn_timer = get_tree().create_timer(1.5)
 		yield(spawn_timer, "timeout")
 		spawnRandomEnemy()
 

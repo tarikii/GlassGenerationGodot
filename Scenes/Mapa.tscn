@@ -16,7 +16,7 @@
 [ext_resource path="res://Resources/Sprites/BotonesImagenes/WizardButton.png" type="Texture" id=14]
 [ext_resource path="res://Resources/Fonts/Sharp Retro.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Resources/Sprites/HPBar/HPbar.jpg" type="Texture" id=16]
-[ext_resource path="res://Resources/Music/night-city-knight.mp3" type="AudioStream" id=17]
+[ext_resource path="res://Resources/Music/TempleOS Hymn - Risen.mp3" type="AudioStream" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -256,9 +256,9 @@ rect_min_size = Vector2( 30, 50 )
 icon = ExtResource( 14 )
 flat = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-volume_db = -37.143
+volume_db = -13.512
 autoplay = true
 
 [connection signal="mouse_entered" from="Camera2D/CanvasLayer/BotonesPersonajes/HBoxBotonesSuperior/FireWormBoton" to="." method="showFireWormText"]

@@ -57,6 +57,7 @@ RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 Nickname="*res://Scripts/GlobalNickname.gd"
 Result="*res://Scripts/GlobalResult.gd"
 Points="*res://Scripts/GlobalPoints.gd"
+MusicMenu="*res://Scenes/MusicControllerMenu.tscn"
 
 [display]
 

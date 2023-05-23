@@ -3,6 +3,9 @@ var escenaJugar
 var escenaInstrucciones
 var escenaPuntuaciones
 
+func _ready():
+	MusicMenu.play_musicMenu()
+
 func cambiarEscenaEmpezarPartida():
 	escenaJugar = "res://Scenes/Mapa.tscn"
 	get_tree().change_scene(escenaJugar)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TempleOS Hymn - Risen.mp3-3a5f1dd03689b02c29796333a0cb2d77.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/TempleOS Hymn - Risen.mp3"
+dest_files=[ "res://.import/TempleOS Hymn - Risen.mp3-3a5f1dd03689b02c29796333a0cb2d77.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

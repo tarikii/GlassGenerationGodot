@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LoseThose Hymns.mp3-df0f0ee490d38cc531dc9dbf90655a95.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/LoseThose Hymns.mp3"
+dest_files=[ "res://.import/LoseThose Hymns.mp3-df0f0ee490d38cc531dc9dbf90655a95.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
