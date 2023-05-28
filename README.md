@@ -1,7 +1,7 @@
 # Como ejecutar este juego?
 
 - Primero que nada, hay que descargarse nuestro zip con todas las carpetas de nuestro proyecto y la version 3.5.2 de Godot, aqui estan:
-    -  https://drive.google.com/file/d/1Az8ZtEmy3GF4jzdHS5f6BbLDeJ3-gjgt/view
+    -  https://drive.google.com/file/d/1qy3fSYsMOzItAV5MHI6wfCsfs06Er1CH/view
     -  Godot 3.5.2 para Windows: https://godotengine.org/download/3.x/windows/ (Primera opción para el ejecutable)
     -  Godot 3.5.2 para Ubuntu: https://godotengine.org/download/3.x/linux/ (Primera opción para el ejecutable)
  
