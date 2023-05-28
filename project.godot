@@ -46,7 +46,7 @@ _global_script_class_icons={
 
 config/name="GlassGeneration"
 run/main_scene="res://Scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Resources/Sprites/Menu/fondomenu.jpg"
 
 [autoload]
 

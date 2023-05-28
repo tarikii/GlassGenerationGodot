@@ -67,6 +67,11 @@ func _process(delta):
 		posicionh -= 10
 		$Camera2D.set_offset(Vector2(posicionh,0))
 	
+	
+	if Input.is_action_pressed("ui_cancel"):
+		var escenaMenu = "res://Scenes/Menu.tscn"
+		get_tree().change_scene(escenaMenu)
+	
 	waitSpawn()
 	time_since_last_reward += delta
 	if time_since_last_reward >= reward_interval:
